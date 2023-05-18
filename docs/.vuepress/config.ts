@@ -13,8 +13,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: 'TechGrow 开放平台官方文档',
-      description: '专注于自媒体引流的免费开放平台。',
+      title: 'TechGrow 官方文档',
+      description: '专注于自媒体引流的免费开放平台。'
     }
   },
 
