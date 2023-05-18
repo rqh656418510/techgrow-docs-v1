@@ -45,31 +45,6 @@ module.exports = {
   // 插件配置
   plugins: [
 	[
-		'@vuepress-reco/vuepress-plugin-bulletin-popover',
-		{
-			width: '300px',
-			title: '网站公告',
-			body: [
-				{
-					type: 'title',
-					content: '欢迎加入微信群',
-					style: 'text-aligin: center;'
-				},
-				{
-					type: 'image',
-					src: 'https://www.techgrow.cn/img/wx-group-qr-techgrow.png'
-				}
-				],
-				footer: [
-				{
-					type: 'button',
-					text: '打赏',
-					link: '/donate'
-				} 
-			]
-		}
-	],
-	[
 		'@vuepress/nprogress', true
 	],
 	[
@@ -123,6 +98,31 @@ module.exports = {
   			site_url: 'https://docs.techgrow.cn/v1'
   		}
   	],
+	[
+		'@vuepress-reco/vuepress-plugin-bulletin-popover',
+		{
+			width: '300px',
+			title: '网站公告',
+			body: [
+				{
+					type: 'title',
+					content: '欢迎加入微信群',
+					style: 'text-aligin: center;'
+				},
+				{
+					type: 'image',
+					src: 'https://www.techgrow.cn/img/wx-group-qr-techgrow.png'
+				}
+				],
+				footer: [
+				{
+					type: 'button',
+					text: '打赏',
+					link: '/donate'
+				} 
+			]
+		}
+	],
   	[
   		'vuepress-plugin-readmore-popular', {
   			// 已申请的博客 ID
