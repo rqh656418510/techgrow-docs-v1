@@ -21,7 +21,7 @@ module.exports = {
   // 主题配置
   theme: 'reco',
   themeConfig: {
-    author: 'clay',
+    author: 'techgrow',
     startYear: '2020',
     logo: '/head.png',
     record: '粤ICP备19024664号',
