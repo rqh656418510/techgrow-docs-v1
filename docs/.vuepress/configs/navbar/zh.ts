@@ -78,11 +78,12 @@ module.exports = [
       {
         text: '联系方式',
         link: '/contact/'
-      },
-      {
-        text: '官方平台',
-        link: 'https://open.techgrow.cn/'
       }
     ]
+  },
+  {
+    text: '官方平台',
+    icon: 'reco-tongzhi',
+    link: 'https://open.techgrow.cn/'
   }
 ]
