@@ -1,0 +1,167 @@
+/** VuePress 1.x Css v0.0.24 **/
+#readmore-wrapper {
+    position: absolute;
+    bottom: 0px;
+    z-index: 9999;
+    width: 100%;
+    margin-top: -100px;
+    font-family: PingFangSC-Regular, sans-serif;
+    display: none;
+}
+
+#readmore-mask {
+    position: relative;
+    height: 200px;
+    background: -webkit-gradient(linear, 0 0%, 0 100%, from(rgba(255, 255, 255, 0)), to(rgb(255, 255, 255)));
+}
+
+#readmore-btn {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    bottom: 30px;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid rgb(61, 175, 124);
+    color: rgb(61, 175, 124);
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: -35px;
+    border-bottom: 1px solid rgb(61, 175, 124) !important;
+    text-decoration: none !important;
+}
+
+#readmore-modal-mask {
+    position: fixed;
+    inset: 0px;
+    opacity: 0.7;
+    z-index: 999;
+    background: rgb(0, 0, 0);
+}
+
+#readmore-modal-content {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    text-align: center;
+    font-size: 13px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    z-index: 9999;
+    font-family: PingFangSC-Regular, sans-serif;
+}
+
+#readmore-modal-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    line-height: 34px;
+    font-size: 25px;
+    cursor: pointer;
+    opacity: 0.2;
+    z-index: 9999;
+    color: rgb(0, 0, 0);
+    background: none;
+    border: none;
+    outline: none;
+}
+
+#readmore-modal-header {
+    font-size: 15px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+#readmore-modal-header div {
+    margin-top: 15px;
+}
+
+#readmore-blog-name {
+    color: rgb(61, 175, 124);
+}
+
+#readmore-blog-keyword {
+    color: rgb(61, 175, 124);
+}
+
+#readmore-blog-forever {
+    color: rgb(61, 175, 124);
+}
+
+#readmore-modal-header div span:not([id]) {
+    color: #444;
+}
+
+#readmore-modal-qrcode img {
+    width: 220px;
+    height: 220px;
+    border: 8px solid rgb(230, 230, 230);
+    margin-bottom: 15px !important;
+    margin-top: 15px !important;
+    opacity: 1 !important;
+    display: inline !important;
+}
+
+#readmore-modal-form {
+    background: rgb(255, 255, 255);
+}
+
+#readmore-modal-captcha-input {
+    width: 160px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 10px;
+    margin-left: -1px !important;
+    margin: 0px 10px;
+    font-size: 13px;
+    text-rendering: auto;
+    text-transform: none;
+    cursor: text;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid rgb(221, 221, 221);
+    appearance: textfield;
+    color: #000;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+}
+
+#readmore-modal-submit-btn {
+    padding: 0px 20px;
+    height: 32px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    background: rgb(61, 175, 124);
+    cursor: pointer;
+}
+
+#readmore-modal-footer p {
+    font-size: 15px;
+    margin: 30px 0px 20px;
+    color: rgb(153, 153, 153);
+}
+
+#readmore-official-website {
+    border-bottom: none !important;
+    text-decoration: none !important;
+    color: rgb(61, 175, 124) !important;
+}
+
+.readmore-btn-mouseover {
+    color: rgb(255, 255, 255) !important;
+    background: rgb(61, 175, 124) !important;
+}
+
+.readmore-btn-mouseout {
+    color: rgb(61, 175, 124) !important;
+    background: rgb(255, 255, 255) !important;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "techgrow-docs",
+  "description": "TechGrow 开放平台官方文档",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-rss": "^1.0.2",
+    "vue-toasted": "^1.1.28",
+    "vuepress": "^1.9.9",
+    "vuepress-plugin-baidu-seo": "^0.0.4",
+    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-medium-zoom": "^1.1.9",
+    "vuepress-plugin-readmore-popular": "^0.0.15",
+    "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-theme-reco": "^1.6.17"
+  }
+}
