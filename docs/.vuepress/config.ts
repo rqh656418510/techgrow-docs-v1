@@ -117,8 +117,8 @@ module.exports = {
 				footer: [
 				{
 					type: 'button',
-					text: '打赏',
-					link: '/donate'
+					text: '赞助',
+					link: '/v1/donate'
 				} 
 			]
 		}
