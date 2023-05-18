@@ -118,7 +118,7 @@ module.exports = {
 				{
 					type: 'button',
 					text: '赞助',
-					link: '/v1/donate'
+					link: '/v1/donate/'
 				} 
 			]
 		}
