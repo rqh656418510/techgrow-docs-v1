@@ -112,7 +112,7 @@ module.exports = {
 			body: [
 				{
 					type: 'title',
-					content: '欢迎加入微信群',
+					content: '欢迎加入微信讨论群',
 					style: 'text-aligin: center;'
 				},
 				{
