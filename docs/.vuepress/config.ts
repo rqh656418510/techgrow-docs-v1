@@ -52,8 +52,8 @@ module.exports = {
 		{
         	serviceWorker: true,
 			updatePopup: {
-				message: "发现新内容可用",
-				buttonText: "刷新"
+				message: '发现新内容可用',
+				buttonText: '刷新'
 			}
     	}
 	],
@@ -84,7 +84,13 @@ module.exports = {
 		}
 	],
 	[
-		'vuepress-plugin-code-copy', true
+		'vuepress-plugin-code-copy',
+		{
+			selector: 'div[class*="language-"] pre',
+			successText: '已复制内容',
+			staticIcon: true,
+			align: 'bottom'
+		}
 	],
   	[
   		'vuepress-plugin-baidu-seo',
