@@ -88,7 +88,7 @@ module.exports = {
 		{
 			selector: 'div[class*="language-"] pre',
 			successText: '已复制内容',
-			staticIcon: true,
+			staticIcon: false,
 			align: 'bottom'
 		}
 	],
