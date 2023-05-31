@@ -75,7 +75,7 @@ description: 博客引流微信公众号
 
 ### 第四步：新增文章内容 DIV 标签
 
-在文章模板文件中找到文章主体的标签元素之后，在其上面包一层 `div` 标签，并将 `div` 标签的 `id` 属性值设置为 `readmore-container`，`class` 属性设置为 `pjax`，即添加的完整 HTML 标签为 `<div id="readmore-container" class="pjax"></div>`，示例模板代码如下：
+在文章模板文件中找到文章主体的标签元素之后，在其上面包一层 `div` 标签，并将 `div` 标签的 `id` 属性值设置为 `readmore-container`，即添加的完整 HTML 标签为 `<div id="readmore-container"></div>`，示例模板代码如下：
 
 ``` html
 <div class="post-block">
@@ -83,7 +83,7 @@ description: 博客引流微信公众号
   {{ post_gallery(post.photos) }}
 
   <!-- 新增的DIV标签 -->
-  <div id="readmore-container" class="pjax">
+  <div id="readmore-container">
     <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ post.lang }}">
         <link itemprop="mainEntityOfPage" href="{{ post.permalink }}">
 
@@ -132,7 +132,7 @@ description: 博客引流微信公众号
 <img :src="$withBase('/images/guide/202980a480fd463c814a31d5cc3fb2a1.png')">
 
 ::: tip 使用总结
-博客整合引流工具，其本质原理就是先在博客的主题源码里，找到文章的主体内容，然后在其外面包裹一层 DIV 标签（`<div id="readmore-container" class="pjax"></div>`），最后再将引流工具的 HTML 代码添加到博客文章的末尾即可。
+博客整合引流工具，其本质原理就是先在博客的主题源码里，找到文章的主体内容，然后在其外面包裹一层 DIV 标签（`<div id="readmore-container"></div>`），最后再将引流工具的 HTML 代码添加到博客文章的末尾即可。
 :::
 
 ## 自定义样式
