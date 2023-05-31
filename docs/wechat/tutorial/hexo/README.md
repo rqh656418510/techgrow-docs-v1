@@ -155,18 +155,6 @@ updated: 2022-01-12 22:25:49
 | [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    |      |
 | [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` |      |
 
-## 已兼容的主题
-
-| 主题      | GitHub 仓库                                                                                            |
-| --------- | ------------------------------------------------------------------------------------------------------ |
-| NexT      | [https://github.com/next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next)         |
-| Yilia     | [https://github.com/litten/hexo-theme-yilia](https://github.com/litten/hexo-theme-yilia)               |
-| Icarus    | [https://github.com/ppoffice/hexo-theme-icarus](https://github.com/ppoffice/hexo-theme-icarus)         |
-| Matery    | [https://github.com/blinkfox/hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)         |
-| Fluid     | [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)         |
-| Stun      | [https://github.com/liuyib/hexo-theme-stun](https://github.com/liuyib/hexo-theme-stun)                 |
-| Butterfly | [https://github.com/jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |
-
 ## 自定义样式
 
 插件默认使用了定义在 [hexo.css](https://qiniu.techgrow.cn/readmore/dist/hexo.css) 的 CSS 样式，你可以使用以下两种方式自定义自己的样式：
@@ -179,6 +167,18 @@ updated: 2022-01-12 22:25:49
 ## 开放 API
 
 若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端应用服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
+
+## 已兼容的主题
+
+| 主题      | GitHub 仓库                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------------ |
+| NexT      | [https://github.com/next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next)         |
+| Yilia     | [https://github.com/litten/hexo-theme-yilia](https://github.com/litten/hexo-theme-yilia)               |
+| Icarus    | [https://github.com/ppoffice/hexo-theme-icarus](https://github.com/ppoffice/hexo-theme-icarus)         |
+| Matery    | [https://github.com/blinkfox/hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)         |
+| Fluid     | [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)         |
+| Stun      | [https://github.com/liuyib/hexo-theme-stun](https://github.com/liuyib/hexo-theme-stun)                 |
+| Butterfly | [https://github.com/jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |
 
 ## 常见问题
 
