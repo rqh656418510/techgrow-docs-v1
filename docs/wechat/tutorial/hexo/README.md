@@ -74,7 +74,7 @@ readmore:
   # 定时校验凭证有效性的时间间隔（秒）
   interval: 60
   # 移动端的页面是否添加微信公众号引流工具
-  arrowMobile: false
+  allowMobile: false
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
 ```
@@ -95,7 +95,7 @@ readmore:
 | height      | String / Number | 否   | `auto`                                                | -    |
 | expires     | Number          | 否   | `365`                                                 | -    |
 | interval    | Number          | 否   | `60`                                                  | -    |
-| arrowMobile | Boolean         | 否   | `false`                                               | -    |
+| allowMobile | Boolean         | 否   | `false`                                               | -    |
 | random      | Number          | 否   | `1`                                                   | -    |
 
 ## 构建 Hexo
@@ -180,4 +180,4 @@ Hexo 安装插件后，浏览器的控制台输出警告或者错误信息，且
 Hexo 安装插件后，移动端的引流工具无法生效，而 PC 端却生效
 :::
 
-考虑到用户体验的问题，在移动端默认是关闭引流功能的。若希望在移动端启用引流功能，可以通过 Hexo 插件的 `arrowMobile: true` 配置参数来实现。
+考虑到用户体验的问题，在移动端默认是关闭引流功能的。若希望在移动端启用引流功能，可以通过 Hexo 插件的 `allowMobile: true` 配置参数来实现。
