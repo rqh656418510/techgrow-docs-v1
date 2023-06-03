@@ -86,7 +86,7 @@ H2 数据库支持多种连接方式，都可以使用 `DB_URL` 配置参数来�
 | `jdbc:h2:[file:][<path>]<dbName>` | 持久化模式，应用重启不会丢失数据库数据         |
 
 ``` properties
-# 内存模式，应用重启会丢失数据库数据
+# 内存模式，应用重启会丢失数据库数据，MODE 表示兼容哪种数据库
 DB_TYPE=h2
 DB_URL=jdbc:h2:mem:readmore;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE
 
@@ -337,10 +337,41 @@ services:
 当基于 OpenAPI 的 Java 后端服务部署完成后，就可以通过开源引流插件的 `baseUrl` 配置参数无缝接入它，不限于 Hexo、VuePress 等插件。
 
 ::: warning 注意事项
-如果您使用的是 Hexo、VuePress 引流插件，请卸载旧版插件，然后再安装最新版的插件，否则引流插件的 `baseUrl` 配置参数不会生效。另外，请确保公网能正常访问 Java 后端服务，否则引流插件无法调用 Java 后端服务的接口。
+如果您使用的是 Hexo、VuePress 等引流插件，请卸载旧版插件，然后再安装最新版的插件，否则引流插件的 `baseUrl` 配置参数不会生效。另外，请确保公网能正常访问 Java 后端服务，否则引流插件无法调用 Java 后端服务的接口。
 :::
 
-### Hexo 插件的配置
+### HTML 代码的接入
+
+``` html
+<link href="https://qiniu.techgrow.cn/readmore/dist/readmore.css" type="text/css" rel="stylesheet">
+<script src="https://qiniu.techgrow.cn/readmore/dist/readmore.js" type="text/javascript"></script>
+<script>
+    var regex = /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+    var isMobile = navigator.userAgent.match(regex);
+    if (!isMobile) {
+        try {
+            var plugin = new ReadmorePlugin();
+            plugin.init({
+                id: "readmore-container",
+                blogId: "18762-1609305354821-257",
+                name: "全栈技术驿站",
+                keyword: "Tech",
+                qrcode: "https://www.techgrow.cn/img/wx_mp_qr.png",
+                type: "hexo",
+                height: "auto",
+                expires: "365",
+                interval: "60",
+                random: "1",
+                baseUrl: 'https://ip:port'
+            })
+        } catch (e) {
+            console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
+        }
+    }
+</script>
+```
+
+### Hexo 插件的接入
 
 ``` yml
 readmore:
@@ -374,7 +405,7 @@ readmore:
   baseUrl: 'https://ip:port'
 ```
 
-### VuePress v1 插件的配置
+### VuePress v1 插件的接入
 
 ``` js
 module.exports = {
@@ -413,7 +444,7 @@ module.exports = {
 }
 ```
 
-### VuePress v2 插件的配置
+### VuePress v2 插件的接入
 
 ``` js
 import { readmorePlugin } from 'vuepress-plugin-readmore-popular-next'
@@ -459,6 +490,6 @@ module.exports = {
 - 第一步
   - 浏览器访问 Java 后端服务的首页 `http://ip:port`，默认端口是 `8080`，若页面能够显示 `Welcome to TechGrow OpenAPI`，则说明 Java 后端服务正常启动。
 - 第二步
-  - 在手机上打开微信，首先取消关注自己的微信公众号，然后再次关注，并发送公众号的回复关键词（如 `验证码`），如果能够接收到获取验证码的链接，则说明 Java 后端服务可以正常处理公众号的消息。
+  - 在手机上打开微信，首先取消关注自己的微信公众号，然后再次关注，并发送公众号的回复关键词（如 `验证码`），如果能够接收到获取验证码的链接，则说明公众号的消息可以被正常处理。
 - 第三步
   - 启动博客的预览服务，点击 `阅读全文按钮`，输入从自己公众号获取到的验证码，如果能够解锁博客文章，则说明引流插件正常工作。
