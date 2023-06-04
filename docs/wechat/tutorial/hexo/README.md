@@ -67,7 +67,7 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
-  # 终端输出运行日志信息
+  # 终端输出运行的日志信息
   debug: true
   # 文章内容的预览高度（例如 300）
   height: 'auto'
@@ -83,10 +83,6 @@ readmore:
   pjaxCssClass: ''
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
-  # 文章排除添加微信公众号引流工具的 URL 规则，支持使用路径、通配符、正则表达式的匹配规则
-  excludes:
-    - '/tags/*'
-    - '/archives/*'
 ```
 
 或者打开 TechGrow 的[博客后台管理页面](https://open.techgrow.cn/#/readmore/website/register)，点击博客列表中右侧的 `使用` 链接，将窗口里的 YAML 配置内容复制到 Hexo 自身的 `_config.yml` 配置文件即可。
