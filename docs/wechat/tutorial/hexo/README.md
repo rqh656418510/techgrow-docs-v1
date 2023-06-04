@@ -179,7 +179,7 @@ readmore:
 
 ## Pjax 的支持
 
-如果博客启用了 Pjax，那么 Hexo 引流插件需要使用 `pjaxCssClass` 参数指定 Pjax 支持重载的 Css 类名（例如 `pjax`），同时需要使用 `pjaxSelector` 参数指定获取文章主体内容的 JS 选择器。否则在站点内（如首页、标签页、归档页等）通过链接访问文章页面时，引流插件可能不会生效，除非是手动刷新一次页面。值得一提的是，两者都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
+如果博客启用了 Pjax，那么 Hexo 引流插件需要使用 `pjaxCssClass` 参数指定 Pjax 支持重载的 Css 类名（例如 `pjax`），同时需要使用 `pjaxSelector` 参数指定获取文章主体内容的 JS 选择器。否则在站点内（如首页、标签页、归档页等）通过链接访问文章页面时，引流工具可能不会生效，除非是手动刷新一次页面。值得一提的是，两者都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
 
 | 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                | 说明 |
 | -------------------------------------------------------------- | ------------------------- | -------------------------------- | ---- |
@@ -187,7 +187,11 @@ readmore:
 | [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`    |      |
 
 ::: tip 配置提示
-值得一提的是，`pjaxCssClass` 参数的作用是让 Pjax 重载引流插件的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章的主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
+值得一提的是，`pjaxCssClass` 参数的作用是让 Pjax 重载引流工具的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章的主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
+:::
+
+::: warning 特别注意
+由于 Pjax 非常依赖页面布局的一致性，因此请确保通过 `pjaxSelector` 参数指定的 JS 选择器在所有页面都能够获取到 HTML 标签元素，否则会导致部分页面的引流功能不会生效。
 :::
 
 ## 自定义样式
