@@ -186,7 +186,7 @@ readmore:
 | [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'` |      |
 | [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`    |      |
 
-::: tip 使用提示
+::: tip 配置提示
 值得一提的是，`pjaxCssClass` 参数的作用是让 Pjax 重载引流插件的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章的主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
 :::
 
