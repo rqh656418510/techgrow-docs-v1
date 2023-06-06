@@ -389,6 +389,8 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
+  # 命令行终端输出日志信息
+  debug: true
   # 文章内容的预览高度（例如 300）
   height: 'auto'
   # 文章解锁后凭证的有效天数
@@ -397,12 +399,12 @@ readmore:
   interval: 60
   # 移动端的页面是否添加微信公众号引流工具
   allowMobile: false
-  # Pjax 支持重载的 Css 类（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
+  # 获取文章主体内容的 JS 选择器，在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
+  pjaxSelector: ''
+  # Pjax 支持重载的 Css 类名（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
   pjaxCssClass: ''
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
-  # 基于 OpenAPI 的后端服务地址
-  baseUrl: 'https://ip:port'
 ```
 
 ### VuePress v1 插件的接入
