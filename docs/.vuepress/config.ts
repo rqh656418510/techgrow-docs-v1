@@ -24,7 +24,7 @@ module.exports = {
   theme: 'reco',
   themeConfig: {
     author: 'techgrow',
-    startYear: '2020',
+    startYear: '2021',
     logo: '/head.png',
     record: '粤ICP备19024664号',
     recordLink: 'https://beian.miit.gov.cn/',
