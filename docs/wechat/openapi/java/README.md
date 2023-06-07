@@ -405,6 +405,8 @@ readmore:
   pjaxCssClass: ''
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
+  # 基于 OpenAPI 的后端服务地址
+  baseUrl: 'https://ip:port'
 ```
 
 ### VuePress v1 插件的接入
