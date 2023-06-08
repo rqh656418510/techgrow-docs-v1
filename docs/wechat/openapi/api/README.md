@@ -198,8 +198,8 @@ TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github
 
 ``` json
 {
-    "msg": "success",
-    "code": 0
+    "code": 0,
+    "msg": "success"
 }
 ```
 
@@ -207,8 +207,8 @@ TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github
 
 ``` json
 {
-    "msg": "Invalid blog id",
-    "code": 407
+    "code": 407,
+    "msg": "Invalid blog id"
 }
 ```
 
