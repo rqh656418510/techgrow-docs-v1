@@ -23,7 +23,7 @@ module.exports = {
   // 主题配置
   theme: 'reco',
   themeConfig: {
-    author: 'techgrow',
+    author: 'TechGrow',
     startYear: '2022',
     logo: '/head.png',
     record: '粤 ICP 备 19024664 号',
