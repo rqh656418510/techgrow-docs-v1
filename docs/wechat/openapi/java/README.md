@@ -272,13 +272,14 @@ services:
 
 由于 Java 后端服务在处理微信公众号消息时，需要有公众号的开发者账号信息。因此必须在 Java 后端服务启动时，指定以下全部配置参数。值得一提的是，公众号的开发者账号信息只会在程序运行时使用到，并不会存储在任何地方，因此您不用担心账号泄漏等安全问题。
 
-| 参数名称                | 说明                       |
-| ----------------------- | -------------------------- |
-| WECHAT_APP_ID           | 微信公众号的开发者 ID      |
-| WECHAT_APP_SECRET       | 微信公众号的开发者密码     |
-| WECHAT_APP_TOKEN        | 微信公众号的令牌 (Token)   |
-| WECHAT_ENCODING_AES_KEY | 微信公众号的消息加解密密钥 |
-| CAPTCHA_API_ADDRESS     | 获取验证码的网页地址       |
+| 参数名称                | 说明                             |
+| ----------------------- | -------------------------------- |
+| WECHAT_APP_ID           | 微信公众号的开发者 ID            |
+| WECHAT_APP_SECRET       | 微信公众号的开发者密码           |
+| WECHAT_APP_TOKEN        | 微信公众号的令牌 (Token)         |
+| WECHAT_ENCODING_AES_KEY | 微信公众号的消息加解密密钥       |
+| CAPTCHA_API_ADDRESS     | 获取验证码的网页地址             |
+| CAPTCHA_REPLY_KEYWORD   | 获取验证码的微信公众号回复关键词 |
 
 ### 服务器配置
 
@@ -308,13 +309,14 @@ services:
 
 当您使用微信公众号官方的关键词自动回复功能，那么在 Java 后端服务启动的时候，无需再指定以下的配置参数。
 
-| 参数名称                | 说明                       |
-| ----------------------- | -------------------------- |
-| WECHAT_APP_ID           | 微信公众号的开发者 ID      |
-| WECHAT_APP_SECRET       | 微信公众号的开发者密码     |
-| WECHAT_APP_TOKEN        | 微信公众号的令牌 (Token)   |
-| WECHAT_ENCODING_AES_KEY | 微信公众号的消息加解密密钥 |
-| CAPTCHA_API_ADDRESS     | 获取验证码的网页地址       |
+| 参数名称                | 说明                             |
+| ----------------------- | -------------------------------- |
+| WECHAT_APP_ID           | 微信公众号的开发者 ID            |
+| WECHAT_APP_SECRET       | 微信公众号的开发者密码           |
+| WECHAT_APP_TOKEN        | 微信公众号的令牌 (Token)         |
+| WECHAT_ENCODING_AES_KEY | 微信公众号的消息加解密密钥       |
+| CAPTCHA_API_ADDRESS     | 获取验证码的网页地址             |
+| CAPTCHA_REPLY_KEYWORD   | 获取验证码的微信公众号回复关键词 |
 
 ### 自动回复配置
 
