@@ -38,7 +38,7 @@ TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github
 | TOKEN_EXPIRE_DAYS     | 否       | int    | `365`     | 解锁后凭证的有效天数                                                          |
 | TOKEN_SIGN_KEY        | 否       | string |           | 凭证的签名密钥，必须是 86 个字符以上                                          |
 | CAPTCHA_LENGTH        | 否       | int    | `6`       | 验证码的长度                                                                  |
-| CAPTCHA_API_ADDRESS   | 是       | string |           | 获取验证码的网页地址                                                          |
+| CAPTCHA_API_ADDRESS   | 否       | string |           | 获取验证码的网页地址                                                          |
 | CAPTCHA_EXPIRES_VALUE | 否       | int    | `5`       | 验证码的有效时间                                                              |
 | CAPTCHA_EXPIRES_UNIT  | 否       | string | `Minutes` | 验证码有效时间的单位，可选值： `Seconds`、`Minutes`、`Hours`、`Days`、`Weeks` |
 | CAPTCHA_REPLY_KEYWORD | 否       | string | `验证码`  | 获取验证码的微信公众号回复关键词                                              |
