@@ -67,7 +67,7 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
-  # 命令行终端输出日志信息
+  # 命令行终端是否输出日志信息
   debug: true
   # 文章内容的预览高度（例如 300）
   height: 'auto'
@@ -75,7 +75,7 @@ readmore:
   expires: 365
   # 定时校验凭证有效性的时间间隔（秒）
   interval: 60
-  # 移动端的页面是否添加微信公众号引流工具
+  # 是否添加微信公众号引流工具到移动端页面
   allowMobile: false
   # 获取文章主体内容的 JS 选择器，在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
   pjaxSelector: ''
@@ -231,4 +231,4 @@ Hexo 安装插件后，浏览器的控制台输出警告或者错误信息，且
 Hexo 安装插件后，移动端的引流工具无法生效，而 PC 端却生效
 :::
 
-考虑到用户体验的问题，在移动端默认是关闭引流功能的。若希望在移动端启用引流功能，可以通过 Hexo 插件的 `allowMobile: true` 配置参数来实现。
+考虑到用户体验的问题，在移动端默认是关闭引流功能的。若希望在移动端启用引流功能，可以通过 Hexo 引流插件的 `allowMobile: true` 配置参数来实现。

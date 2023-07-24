@@ -391,7 +391,7 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
-  # 命令行终端输出日志信息
+  # 命令行终端是否输出日志信息
   debug: true
   # 文章内容的预览高度（例如 300）
   height: 'auto'
@@ -399,7 +399,7 @@ readmore:
   expires: 365
   # 定时校验凭证有效性的时间间隔（秒）
   interval: 60
-  # 移动端的页面是否添加微信公众号引流工具
+  # 是否添加微信公众号引流工具到移动端页面
   allowMobile: false
   # 获取文章主体内容的 JS 选择器，在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
   pjaxSelector: ''
@@ -422,7 +422,7 @@ module.exports = {
       // 已申请的微信公众号名称
       name: '全栈技术驿站',
       // 已申请的微信公众号回复关键词
-      keyword: '验证码',                    
+      keyword: 'Tech',                    
       // 已申请的微信公众号二维码图片
       qrcode: 'https://www.techgrow.cn/img/wx_mp_qr.png',
       // 文章内容的 JS 选择器，若使用的不是官方默认主题，则需要根据第三方的主题来设置
@@ -435,6 +435,8 @@ module.exports = {
       excludes: { strExp: [], regExp: [] },
       // 是否反转 URL 排除规则的配置，即只有符合排除规则的文章才会添加引流工具
       reverse: false,
+      // 是否添加微信公众号引流工具到移动端页面
+      allowMobile: false,
       // 文章内容的预览高度(例如 300)
       height: 'auto',
       // 文章解锁后凭证的有效天数
@@ -463,7 +465,7 @@ module.exports = {
       // 已申请的微信公众号名称
       name: '全栈技术驿站',
       // 已申请的微信公众号回复关键词
-      keyword: '验证码',     
+      keyword: 'Tech',                    
       // 已申请的微信公众号二维码图片
       qrcode: 'https://www.techgrow.cn/img/wx_mp_qr.png',
       // 文章内容的 JS 选择器，若使用的不是官方默认主题，则需要根据第三方的主题来设置
@@ -476,6 +478,8 @@ module.exports = {
       excludes: { strExp: [], regExp: [] },
       // 是否反转 URL 排除规则的配置，即只有符合排除规则的文章才会添加引流工具
       reverse: false,
+      // 是否添加微信公众号引流工具到移动端页面
+      allowMobile: false,
       // 文章内容的预览高度(例如 300)
       height: 'auto',
       // 文章解锁后凭证的有效天数
