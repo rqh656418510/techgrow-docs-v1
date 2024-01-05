@@ -231,23 +231,29 @@ module.exports = {
 ## 常见问题
 
 ::: tip 问题一
-VuePress 安装插件后，引流工具无法生效。
+VuePress 安装插件后，所有页面的引流工具都无法生效。
 :::
 
-若引流工具无法生效，此时需要留意 VuePress 使用的是不是第三方主题。在使用第三方主题的情况下，一般需要根据第三方主题来配置插件的 `selector` 参数，该参数的作用是指定 JS 选择器来获取文章的主体内容，详细说明请看<a :href="$withBase('/wechat/tutorial/vuepress2/#插件参数说明')">这里</a>。
+若所有页面的引流工具都无法生效，此时需要留意 VuePress 使用的是不是第三方主题。在使用第三方主题的情况下，一般需要根据第三方主题来配置插件的 `selector` 参数，该参数的作用是指定 JS 选择器来获取文章的主体内容，详细说明请看<a :href="$withBase('/wechat/tutorial/vuepress2/#插件参数说明')">这里</a>。
 
-> 值得一提的是，若由于 `selector` 参数配置不正确导致引流工具无效，那么引流工具会在浏览器的控制台输出如下的警告信息：
+> 值得一提的是，若由于 `selector` 参数配置不正确导致引流工具无效，那么在浏览器的控制台会输出类似下面的警告信息：
 
 <img :src="$withBase('/images/guide/8i4J9HpUUelLo43KLdHphgMHIFQwleNg.png')">
 
 ::: tip 问题二
-VuePress 安装插件后，浏览器的控制台输出警告或者错误信息，且引流工具无法生效
+VuePress 安装插件后，部分页面的引流工具无法生效。
 :::
 
-浏览器访问 VuePress 博客后，按下 `F12` 快捷键调出调试工具，然后切换到 `控制台`，最后将警告或者错误信息截图，并发送到 [官方微信群](https://www.techgrow.cn/img/wx-group-qr-techgrow.png) 或者 `656418510@qq.com` 邮箱，建议留言备注 VuePress 与 VuePress 主题的版本号。
+若部分页面的引流工具无法生效（例如站内不同页面之间的跳转，需要手动刷新一次页面后引流工具才生效），此时建议增大引流插件 `waitDomMills` 参数的值（例如 `2000`），该参数可以指定引流工具等待 DOM 节点加载完成的时间（毫秒）。
 
 ::: tip 问题三
-Hexo 安装插件后，移动端的引流工具无法生效，而 PC 端却生效
+VuePress 安装插件后，浏览器的控制台输出错误信息，且引流工具无法生效
+:::
+
+浏览器访问 VuePress 博客后，按下 `F12` 快捷键调出调试工具，然后切换到 `控制台`，最后将错误信息截图，并发送到 [官方微信群](https://www.techgrow.cn/img/wx-group-qr-techgrow.png) 或者 `656418510@qq.com` 邮箱，建议留言备注 VuePress 与 VuePress 主题的版本号。
+
+::: tip 问题四
+VuePress 安装插件后，移动端的引流工具无法生效，而 PC 端却生效
 :::
 
 考虑到用户体验的问题，在移动端默认是关闭引流功能的。若希望在移动端启用引流功能，可以通过 VuePress 引流插件的 `allowMobile: true` 配置参数来实现。
