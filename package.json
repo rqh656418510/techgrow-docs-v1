@@ -16,7 +16,7 @@
     "vuepress-plugin-baidu-seo": "^0.0.4",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-medium-zoom": "^1.1.9",
-    "vuepress-plugin-readmore-popular": "^0.0.16",
+    "vuepress-plugin-readmore-popular": "^0.0.17",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-theme-reco": "^1.6.17"
   }
