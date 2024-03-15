@@ -47,7 +47,7 @@ Hexo 博客建议安装 [hexo-readmore](https://github.com/rqh656418510/hexo-rea
 npm install hexo-readmore --save
 ```
 
-## 配置 Hexo
+## 配置插件
 
 编辑 Hexo 自身的 `_config.yml` 配置文件，新增插件的配置信息（请自行更改博客相关的信息），如下所示：
 
@@ -67,10 +67,10 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
+  # 文章内容的预览高度(例如 300)，设置值为 auto 表示预览高度自适应
+  height: 'auto'
   # 命令行终端是否输出日志信息
   debug: true
-  # 文章内容的预览高度（例如 300）
-  height: 'auto'
   # 文章解锁后凭证的有效天数
   expires: 365
   # 定时校验凭证有效性的时间间隔（秒）
@@ -87,7 +87,7 @@ readmore:
 
 或者打开 TechGrow 的[博客后台管理页面](https://open.techgrow.cn/#/readmore/website/register)，点击博客列表中右侧的 `使用` 链接，将窗口里的 YAML 配置内容复制到 Hexo 自身的 `_config.yml` 配置文件即可。
 
-## 参数说明
+## 插件参数说明
 
 | 参数         | 类型            | 必填 | 默认值                                                | 说明 |
 | ------------ | --------------- | ---- | ----------------------------------------------------- | ---- |
@@ -108,7 +108,7 @@ readmore:
 | random       | Number          | 否   | `1`                                                   | -    |
 | excludes     | Array           | 否   |                                                       | -    |
 
-## 构建 Hexo
+## 构建 Hexo 博客
 
 - 运行 `hexo clean` 命令清理本地博客
 

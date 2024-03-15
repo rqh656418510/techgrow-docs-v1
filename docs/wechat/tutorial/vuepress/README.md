@@ -50,7 +50,7 @@ VuePress v1 博客建议安装 [vuepress-plugin-readmore-popular](https://github
 npm install -D vuepress-plugin-readmore-popular
 ```
 
-## 配置 VuePress
+## 配置插件
 
 编辑 VuePress 的主配置文件（例如 `.vuepress/config.js`），新增插件的配置信息（请自行更改博客相关的信息），如下所示：
 
@@ -76,10 +76,10 @@ module.exports = {
       excludes: { strExp: [], regExp: [] },
       // 是否反转 URL 排除规则的配置，即只有符合排除规则的文章才会添加引流工具
       reverse: false,
+      // 文章内容的预览高度(例如 300)，设置值为 auto 表示预览高度自适应
+      height: 'auto',
       // 是否添加微信公众号引流工具到移动端页面
       allowMobile: false,
-      // 文章内容的预览高度(例如 300)
-      height: 'auto',
       // 文章解锁后凭证的有效天数
       expires: 365,
       // 定时校验凭证有效性的时间间隔（秒）

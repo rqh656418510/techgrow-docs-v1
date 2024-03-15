@@ -391,10 +391,10 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
+  # 文章内容的预览高度(例如 300)，设置值为 auto 表示预览高度自适应
+  height: 'auto'
   # 命令行终端是否输出日志信息
   debug: true
-  # 文章内容的预览高度（例如 300）
-  height: 'auto'
   # 文章解锁后凭证的有效天数
   expires: 365
   # 定时校验凭证有效性的时间间隔（秒）
@@ -435,10 +435,10 @@ module.exports = {
       excludes: { strExp: [], regExp: [] },
       // 是否反转 URL 排除规则的配置，即只有符合排除规则的文章才会添加引流工具
       reverse: false,
+      // 文章内容的预览高度(例如 300)，设置值为 auto 表示预览高度自适应
+      height: 'auto',
       // 是否添加微信公众号引流工具到移动端页面
       allowMobile: false,
-      // 文章内容的预览高度(例如 300)
-      height: 'auto',
       // 文章解锁后凭证的有效天数
       expires: 365,
       // 定时校验凭证有效性的时间间隔（秒）
@@ -480,10 +480,10 @@ module.exports = {
       excludes: { strExp: [], regExp: [] },
       // 是否反转 URL 排除规则的配置，即只有符合排除规则的文章才会添加引流工具
       reverse: false,
+      // 文章内容的预览高度(例如 300)，设置值为 auto 表示预览高度自适应
+      height: 'auto',
       // 是否添加微信公众号引流工具到移动端页面
       allowMobile: false,
-      // 文章内容的预览高度(例如 300)
-      height: 'auto',
       // 文章解锁后凭证的有效天数
       expires: 365,
       // 定时校验凭证有效性的时间间隔（秒）
