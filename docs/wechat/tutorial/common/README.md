@@ -115,7 +115,7 @@ description: 博客引流微信公众号
 | keyword  | String          | 是   |           | 已申请的微信公众号回复关键词                                                                                              |
 | libUrl   | String          | 否   |           | JS 文件的链接，用于 CDN 加速                                                                                              |
 | cssUrl   | String          | 否   |           | CSS 文件的链接，用于自定义样式                                                                                            |
-| height   | String / Number | 否   | `auto`    | 文章内容的预览高度(例如 300)，设置值为 auto 表示预览高度自适应                                                            |
+| height   | String / Number | 否   | `auto`    | 文章内容的预览高度(例如 300)，设置值为 auto 则表示预览高度自适应                                                            |
 | expires  | Number          | 否   | `365`     | 文章解锁后凭证的有效天数                                                                                                  |
 | interval | Number          | 否   | `60`      | 定时校验凭证有效性的时间间隔（秒）                                                                                        |
 | random   | Number          | 否   | `1`       | 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具                 |

@@ -67,7 +67,7 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
-  # 文章内容的预览高度(例如 300)，设置值为 auto 表示预览高度自适应
+  # 文章内容的预览高度(例如 300)，设置值为 auto 则表示预览高度自适应
   height: 'auto'
   # 命令行终端是否输出日志信息
   debug: true
