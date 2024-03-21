@@ -82,6 +82,11 @@ module.exports = [
     ]
   },
   {
+    text: '项目赞助',
+    icon: 'reco-category',
+    link: '/donate/'
+  },
+  {
     text: '官方平台',
     icon: 'reco-tongzhi',
     link: 'https://open.techgrow.cn/'
