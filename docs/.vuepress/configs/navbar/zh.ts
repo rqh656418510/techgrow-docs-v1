@@ -63,7 +63,7 @@ module.exports = [
       },
       {
         text: 'VuePress v1 博客',
-        link: 'https://docs.techgrow.cn/v1/wechat/demo/'
+        link: '/wechat/demo/'
       },
       {
         text: 'VuePress v2 博客',
