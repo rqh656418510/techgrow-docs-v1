@@ -384,7 +384,7 @@ readmore:
   # 已申请的微信公众号名称
   name: '全栈技术驿站'
   # 已申请的微信公众号回复关键词
-  keyword: 'tech'
+  keyword: 'Tech'
   # 已申请的微信公众号二维码图片
   qrcode: 'https://www.techgrow.cn/img/wx_mp_qr.png'
   # 自定义的 JS 资源链接，可用于 CDN 加速
