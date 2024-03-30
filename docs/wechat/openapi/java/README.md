@@ -401,10 +401,6 @@ readmore:
   interval: 60
   # 是否添加微信公众号引流工具到移动端页面
   allowMobile: false
-  # 获取文章主体内容的 JS 选择器，在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
-  pjaxSelector: ''
-  # Pjax 支持重载的 Css 类名（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
-  pjaxCssClass: ''
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
   # 基于 OpenAPI 的后端服务地址
