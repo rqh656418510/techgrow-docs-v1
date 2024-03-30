@@ -181,7 +181,7 @@ readmore:
 
 ``` yml
 readmore:
-  # 文章目录的 JS 选择器
+  # 获取文章目录（Toc）的 JS 选择器
   tocSelector: ''
   # 文章主体内容所在容器（DIV 标签）的 ID，在存在兼容性问题时才需要根据不同的主题进行配置
   articleContentId: ''
