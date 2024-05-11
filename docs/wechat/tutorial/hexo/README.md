@@ -189,9 +189,10 @@ readmore:
 
 值得一提的是，上述两个插件配置参数都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
 
-| 主题                                                    | tocSelector 配置              | articleContentId 配置                |
-| ------------------------------------------------------- | ----------------------------- | ------------------------------------ |
-| [Matery](https://github.com/blinkfox/hexo-theme-matery) | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'` |
+| 主题                                                           | tocSelector 配置              | articleContentId 配置                |
+| -------------------------------------------------------------- | ----------------------------- | ------------------------------------ |
+| [Matery](https://github.com/blinkfox/hexo-theme-matery)        | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'` |
+| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `tocSelector: '#card-toc'`    | `articleContentId: 'post'`           |
 
 ::: tip 配置参数说明
 上述 `tocSelector` 参数的作用是通过 JS 选择器获取文章目录（Toc）的内容，而 `articleContentId` 参数是用于指定文章主体内容所在容器（DIV 标签）的 ID。
@@ -217,7 +218,7 @@ readmore:
 
 | 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                     |
 | -------------------------------------------------------------- | ------------------------- | ------------------------------------- |
-| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'article.post-content'`         |
+| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: '#post'`               |
 | [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'`      |
 | [Tree](https://github.com/rqh656418510/hexo-theme-tree)        | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.article-content'` |
 
