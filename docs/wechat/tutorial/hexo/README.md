@@ -217,7 +217,7 @@ readmore:
 
 | 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                     |
 | -------------------------------------------------------------- | ------------------------- | ------------------------------------- |
-| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`         |
+| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'article.post-content'`         |
 | [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'`      |
 | [Tree](https://github.com/rqh656418510/hexo-theme-tree)        | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.article-content'` |
 
