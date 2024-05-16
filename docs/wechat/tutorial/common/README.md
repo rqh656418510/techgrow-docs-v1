@@ -5,7 +5,7 @@ description: 博客引流微信公众号
 
 ## 前言
 
-博客将流量导向微信公众号很简单，可以使用 [TechGrow](https://open.techgrow.cn) 的免费引流工具实现，用户扫码关注微信公众号后可以解锁全站文章，让微信公众号的粉丝数躺着增长。整个过程只需六步就可以搞定，适用于各类主流的博客框架，例如 `hexo`、`vuepress`、`hugo`、`gatsby`、`jekyll`、`typecho`、`wordpress` 等。
+博客将流量导向微信公众号很简单，可以使用 [TechGrow](https://open.techgrow.cn) 的免费引流工具实现，用户扫码关注微信公众号后可以解锁全站文章，让微信公众号的粉丝数躺着增长。博客手动整合引流工具，只需六步就可以搞定，适用于各类主流博客或者个人网站。
 
 ::: tip 提示
 本文将以 Hexo 的 NexT 主题博客举例，重点介绍博客如何手动整合 [TechGrow](https://open.techgrow.cn) 的免费引流工具。
@@ -102,9 +102,35 @@ description: 博客引流微信公众号
 
 ### 第五步：新增引流工具的 HTML 代码
 
-打开 TechGrow 的[博客后台管理页面](https://open.techgrow.cn/#/readmore/website/register)，点击博客列表中右侧的 `使用` 链接，将窗口里的 HTML 代码复制到第三步中找到的文章模板文件的末尾，也可以统一添加到主题的 `footer` 模板文件中，示例 HTML 代码如下图所示：
+打开 TechGrow 的[博客后台管理页面](https://open.techgrow.cn/#/readmore/website/register)，点击博客列表中右侧的 `使用` 链接，将窗口里的 HTML 代码复制到第三步中找到的文章模板文件的末尾，也可以统一添加到主题的 `footer` 模板文件中。HTML 示例代码如下所示：
 
-<img :src="$withBase('/images/guide/ad963a38752743169e8f351983cc6cc1.png')">
+``` html
+<link href="https://qiniu.techgrow.cn/readmore/dist/readmore.css" type="text/css" rel="stylesheet">
+<script src="https://qiniu.techgrow.cn/readmore/dist/readmore.js" type="text/javascript"></script>
+<script>
+    var regex = /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+    var isMobile = navigator.userAgent.match(regex);
+    if (!isMobile) {
+        try {
+            var plugin = new ReadmorePlugin();
+            plugin.init({
+                id: "readmore-container",
+                blogId: "18762-1609305354821-257",
+                name: "全栈技术驿站",
+                keyword: "Tech",
+                qrcode: "https://www.techgrow.cn/img/wx_mp_qr.png",
+                type: "hexo",
+                height: "auto",
+                expires: "365",
+                interval: "60",
+                random: "1"
+            })
+        } catch (e) {
+            console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
+        }
+    }
+</script>
+```
 
 | 参数     | 类型            | 必填 | 默认值    | 描述                                                                                                                      |
 | -------- | --------------- | ---- | --------- | ------------------------------------------------------------------------------------------------------------------------- |
