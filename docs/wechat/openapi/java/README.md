@@ -70,27 +70,28 @@ TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github
 在默认情况下，您无需指定 Java 后端服务的数据库配置参数，即可跳过阅读数据库使用这一章节。
 :::
 
-目前支持使用 [H2](https://h2database.com) 或者 MySQL 数据库，默认使用的数据库是 H2。另外，连接数据库的默认账号是 `root`，默认密码是 `123456`。值得一提的是，以后会支持更多的数据库类型，例如 SQLite、MongoDB、PostgreSQL 等。
+目前支持使用 [H2](https://h2database.com) 或者 MySQL 数据库，默认使用的数据库是 H2。另外，连接数据库的默认用户名称是 `root`，默认用户密码是 `123456`。值得一提的是，以后会支持更多的数据库类型，例如 SQLite、MongoDB、PostgreSQL 等。
 
 ### H2 数据库
 
-Java 后端服务默认使用 [H2](https://h2database.com) 作为数据库（内嵌式数据库），且在默认的配置下会持久化数据库的数据，并将数据保存到 Java 应用所在目录下的 `db` 目录里的 `readmore.mv.db` 文件中。值得一提的是，若不需要持久化数据库的数据，则可以使用 H2 数据库的内存模式，这样可以得到极致的数据库性能，但应用重启后会丢失所有数据库数据。
+Java 后端服务默认使用 [H2](https://h2database.com) 作为数据库（内嵌式数据库），且在默认的配置下会持久化数据库的数据，并将数据保存到 Java 应用（即 Jar 包）所在目录下的 `db` 目录里的 `readmore.mv.db` 文件中。如果不需要持久化数据库的数据，则可以使用 H2 数据库的内存模式，这样可以得到极致的数据库性能，但应用重启后会丢失所有数据库数据。
 
 ::: tip H2 数据库的连接
-H2 数据库支持多种连接方式，都可以使用 `DB_URL` 配置参数来指定，常用的两种连接方式如下。
+
+H2 数据库的连接，可以使用 `DB_TYPE`、`DB_URL` 配置参数来实现。值得一提的是，H2 数据库支持多种连接方式，而且都可以使用 `DB_URL` 配置参数来指定。常用的两种连接方式如下。
 :::
 
-| 连接语法                        | 说明                                           |
-| ------------------------------- | ---------------------------------------------- |
-| `jdbc:h2:mem:<dbName>`          | 内存模式，不支持多个客户端同时连接同一个数据库 |
-| `jdbc:h2:file:[<path>]<dbName>` | 持久化模式，应用重启不会丢失数据库数据         |
+| 连接语法                        | 说明                                                                       |
+| ------------------------------- | -------------------------------------------------------------------------- |
+| `jdbc:h2:mem:<dbName>`          | 内存模式，应用重启会丢失数据库数据，且不支持多个客户端同时连接同一个数据库 |
+| `jdbc:h2:file:[<path>]<dbName>` | 持久化模式，应用重启不会丢失数据库数据                                     |
 
 ``` properties
 # 内存模式，应用重启会丢失数据库数据，MODE 表示兼容哪种数据库
 DB_TYPE=h2
 DB_URL=jdbc:h2:mem:readmore;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE
 
-# 持久化模式，连接位于当前应用所在目录下的 db 目录里的 readmore 数据库，MODE 表示兼容哪种数据库
+# 持久化模式，连接位于 Java 应用（即 Jar 包）所在目录下的 db 目录里的 readmore 数据库，MODE 表示兼容哪种数据库
 DB_TYPE=h2
 DB_URL=jdbc:h2:file:./db/readmore;MODE=MySQL;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE
 ```
@@ -103,7 +104,7 @@ Java 应用正常启动后，默认会自动执行 H2 数据库的初始化操�
 H2 数据库自带 Web 控制台，它的作用就相当于 PhpMyAdmin，可以很方便地管理数据库。
 :::
 
-使用配置参数 `DB_CONSOLE_ENABLED=true`，就可以启用 H2 的 Web 控制台功能，浏览器默认的访问路径是 `http://ip:port/h2-console`，默认端口是 `8080`。考虑到数据库的安全性，H2 的 Web 控制台默认不允许远程访问，但可以使用`DB_CONSOLE_ALLOW_OTHERS=true` 配置参数来解除限制。
+使用配置参数 `DB_CONSOLE_ENABLED=true`，就可以启用 H2 的 Web 控制台功能，浏览器默认的访问路径是 `https://ip:port/h2-console`，默认端口是 `8080`。考虑到数据库的安全性，H2 的 Web 控制台默认不允许远程访问，但可以使用`DB_CONSOLE_ALLOW_OTHERS=true` 配置参数来解除限制。
 
 ### MySQL 数据库
 
@@ -136,7 +137,7 @@ Java 应用正常启动后，默认会自动执行 MySQL 数据库的初始化�
 
 ### H2 数据库
 
-Java 后端服务在默认的配置下会持久化 H2 数据库的数据，并将数据保存到 Java 应用所在目录下的 `db` 目录里的 `readmore.mv.db` 文件中。因此，您可以先关闭 Java 后端服务，然后拷贝一份 `readmore.mv.db` 文件，即可实现 H2 数据库的全量备份。另外，您也可以通过 H2 的 Web 控制台工具进行备份，支持在不关闭 Java 后端服务的基础上，实时备份或者恢复 H2 的数据库数据。
+Java 后端服务在默认的配置下会持久化 H2 数据库的数据，并将数据保存到 Java 应用（即 Jar 包）所在目录下的 `db` 目录里的 `readmore.mv.db` 文件中。因此，您可以先关闭 Java 后端服务，然后拷贝一份 `readmore.mv.db` 文件，即可实现 H2 数据库的全量备份。另外，您也可以通过 H2 的 Web 控制台工具进行备份，支持在不关闭 Java 后端服务的基础上，实时备份或者恢复 H2 的数据库数据。
 
 ### MySQL 数据库
 
@@ -211,7 +212,7 @@ mkdir -p /usr/data/techgrow-openapi/logs
 ```
 
 ::: tip Docker 配置参数指定
-Docker 或者 Docker-Compose 部署应用时，都可以通过环境变量的方式指定应用的配置参数。
+Docker 或者 Docker-Compose 部署应用时，都可以通过环境变量的方式指定 Java 应用的配置参数。
 :::
 
 ### Docker 一键部署
@@ -256,8 +257,8 @@ services:
       - '/usr/data/techgrow-openapi/logs:/usr/local/techgrow-openapi-java/logs'
 ```
 
-::: tip Docker 查看容器的运行日志
-为了观察 Java 应用是否正常启动，即查看 Java 应用的启动日志，可以在 Docker 容器启动后，使用 `docker logs -f --tail 50 techgrow-openapi` 命令查看 Docker 容器的运行日志。另外，还可以直接使用 `Vi` 编辑器，打开挂载在本地磁盘里的 Java 应用日志文件，所在的目录路径是 `/usr/data/techgrow-openapi/logs`。
+::: tip 查看 Docker 容器的运行日志
+为了观察 Java 应用是否启动成功，可以查看 Java 应用的启动日志来判断。在 Docker 容器启动后，可以使用 `docker logs -f --tail 50 techgrow-openapi` 命令查看 Docker 容器的运行日志。另外，还可以直接使用 `vi` 编辑器，打开本地磁盘里的 Java 应用日志文件，所在的目录路径是 `/usr/data/techgrow-openapi/logs`。
 :::
 
 ## 公众号服务器配置
@@ -498,7 +499,7 @@ module.exports = {
 ## 验证部署结果
 
 - 第一步
-  - 浏览器访问 Java 后端服务的首页 `http://ip:port`，默认端口是 `8080`，若页面能够显示 `Welcome to TechGrow OpenAPI`，则说明 Java 后端服务正常启动。
+  - 浏览器访问 Java 后端服务的首页 `https://ip:port`，默认端口是 `8080`，若页面能够显示 `Welcome to TechGrow OpenAPI`，则说明 Java 后端服务正常启动。
 - 第二步
   - 在手机上打开微信，首先取消关注自己的微信公众号，然后再次关注，并发送公众号的回复关键词（如 `验证码`），如果能够接收到获取验证码的链接，则说明公众号的消息可以被正常处理。
 - 第三步
