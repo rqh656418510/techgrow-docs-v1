@@ -8,7 +8,7 @@ description: OpenAPI 接口
 在日常使用中，如果 TechGrow 官方的后台管理功能不能满足您的需求，可以基于 OpenAPI 开发并私有化部署自己的后端服务。反之，您甚至还可以在 TechGrow 官方后端服务的基础上，基于 OpenAPI 独立开发自己的前端引流插件。
 
 ::: tip 基于 OpenAPI 的开源代码
-TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github.com/rqh656418510/techgrow-openapi-java)。简单私有化部署 Java 后端服务后，就可以无缝接入已开源的引流插件，不限于 Hexo、VuePress 等引流插件。值得一提的是，您也可以在开源后端项目的基础上，二次开发自己所需要的功能。
+TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github.com/rqh656418510/techgrow-openapi-java)。简单私有化部署 Java 后端服务后，就可以无缝接入已开源的引流插件，不限于 Hexo、VuePress 等引流插件。
 :::
 
 ## 接口列表
