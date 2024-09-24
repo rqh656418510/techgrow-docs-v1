@@ -104,7 +104,7 @@ Java 应用正常启动后，默认会自动执行 H2 数据库的初始化操�
 H2 数据库自带 Web 控制台，它的作用就相当于 PhpMyAdmin，可以很方便地管理数据库。
 :::
 
-使用配置参数 `DB_CONSOLE_ENABLED=true`，就可以启用 H2 的 Web 控制台功能，浏览器默认的访问路径是 `https://ip:port/h2-console`，默认端口是 `8080`。考虑到数据库的安全性，H2 的 Web 控制台默认不允许远程访问，但可以使用`DB_CONSOLE_ALLOW_OTHERS=true` 配置参数来解除限制。
+使用配置参数 `DB_CONSOLE_ENABLED=true`，就可以启用 H2 的 Web 控制台功能，浏览器默认的访问路径是 `http://ip:port/h2-console`，默认端口是 `8080`。考虑到数据库的安全性，H2 的 Web 控制台默认不允许远程访问，但可以使用`DB_CONSOLE_ALLOW_OTHERS=true` 配置参数来解除限制。
 
 ### MySQL 数据库
 
@@ -169,7 +169,7 @@ nohup java -jar \
       -DWECHAT_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxx \
       -DWECHAT_APP_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \
       -DWECHAT_ENCODING_AES_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx \
-      -DCAPTCHA_API_ADDRESS=https://ip:port/api/readmore/captcha/generate \
+      -DCAPTCHA_API_ADDRESS=http://ip:port/api/readmore/captcha/generate \
       techgrow-openapi-java.jar > catalina.out 2>&1 &
 ```
 
@@ -225,7 +225,7 @@ docker run -p 8080:8080 \
     -e WECHAT_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxx \
     -e WECHAT_APP_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \
     -e WECHAT_ENCODING_AES_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx \
-    -e CAPTCHA_API_ADDRESS=https://ip:port/api/readmore/captcha/generate \
+    -e CAPTCHA_API_ADDRESS=http://ip:port/api/readmore/captcha/generate \
     -v /usr/data/techgrow-openapi/db:/usr/local/techgrow-openapi-java/db \
     -v /usr/data/techgrow-openapi/logs:/usr/local/techgrow-openapi-java/logs \
     -d --name techgrow-openapi techgrow/techgrow-openapi-java:latest
@@ -249,7 +249,7 @@ services:
       - WECHAT_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxx
       - WECHAT_APP_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       - WECHAT_ENCODING_AES_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-      - CAPTCHA_API_ADDRESS=https://ip:port/api/readmore/captcha/generate
+      - CAPTCHA_API_ADDRESS=http://ip:port/api/readmore/captcha/generate
     ports:
       - 8080:8080
     volumes:
@@ -292,7 +292,7 @@ services:
 
 <img :src="$withBase('/images/guide/biphl74didn209mtcmdf8o64frhsd20j.png')">
 
-在 `服务器配置` 一栏，点击 `修改配置` 按钮，填写对应的服务器信息，其中的 `URL` 需要指定为 Java 后端服务接收公众号消息的地址 (`https://ip:port/api/readmore/wechat/receive`)，消息加解密方式必须选择 `安全模式`，最后点击 `启用` 按钮让服务器的配置生效。
+在 `服务器配置` 一栏，点击 `修改配置` 按钮，填写对应的服务器信息，其中的 `URL` 需要指定为 Java 后端服务接收公众号消息的地址 (`http://ip:port/api/readmore/wechat/receive`)，消息加解密方式必须选择 `安全模式`，最后点击 `启用` 按钮让服务器的配置生效。
 
 <img :src="$withBase('/images/guide/32d3joc2xxbo2ynfn7lxqnglhlz9echb.png')">
 
@@ -328,7 +328,7 @@ services:
 填写 `规则名称`、`关键词（例如验证码）`、`回复内容` 选择 `文字`，然后 `回复文字` 的内容填写获取博客解锁验证码的链接（如下）。
 
 ``` html
-<a href="https://ip:port/api/readmore/captcha/generate?blogId=18762-1609305354821-257">点击链接，获取博客解锁验证码</a>
+<a href="http://ip:port/api/readmore/captcha/generate?blogId=18762-1609305354821-257">点击链接，获取博客解锁验证码</a>
 ```
 
 <img :src="$withBase('/images/guide/no58feuvrylv60m5fso8po63v8l90j29.png')">
@@ -365,7 +365,7 @@ services:
                 expires: "365",
                 interval: "60",
                 random: "1",
-                baseUrl: 'https://ip:port'
+                baseUrl: 'http://ip:port'
             })
         } catch (e) {
             console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
@@ -405,7 +405,7 @@ readmore:
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
   # 基于 OpenAPI 的后端服务地址
-  baseUrl: 'https://ip:port'
+  baseUrl: 'http://ip:port'
 ```
 
 ### VuePress v1 插件的接入
@@ -445,7 +445,7 @@ module.exports = {
       // 每篇文章随机添加引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
       random: 1,
       // 基于 OpenAPI 的后端服务地址
-      baseUrl: 'https://ip:port'
+      baseUrl: 'http://ip:port'
     }]
   ]
 }
@@ -490,7 +490,7 @@ module.exports = {
       // 每篇文章随机添加引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
       random: 1,
       // 基于 OpenAPI 的后端服务地址
-      baseUrl: 'https://ip:port'
+      baseUrl: 'http://ip:port'
     })
   ]
 }
@@ -499,7 +499,7 @@ module.exports = {
 ## 验证部署结果
 
 - 第一步
-  - 浏览器访问 Java 后端服务的首页 `https://ip:port`，默认端口是 `8080`，若页面能够显示 `Welcome to TechGrow OpenAPI`，则说明 Java 后端服务正常启动。
+  - 浏览器访问 Java 后端服务的首页 `http://ip:port`，默认端口是 `8080`，若页面能够显示 `Welcome to TechGrow OpenAPI`，则说明 Java 后端服务正常启动。
 - 第二步
   - 在手机上打开微信，首先取消关注自己的微信公众号，然后再次关注，并发送公众号的回复关键词（如 `验证码`），如果能够接收到获取验证码的链接，则说明公众号的消息可以被正常处理。
 - 第三步
