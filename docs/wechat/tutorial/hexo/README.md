@@ -77,8 +77,8 @@ readmore:
   interval: 60
   # 是否添加微信公众号引流工具到移动端页面
   allowMobile: false
-  # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
-  random: 1
+  # 每篇文章随机添加引流工具的概率，范围在 0.1 ~ 1.0 之间，代表 10% ~ 100%，其中 1.0 表示所有文章默认都添加引流工具
+  random: 1.0
 ```
 
 或者打开 TechGrow 的[博客后台管理页面](https://open.techgrow.cn/#/readmore/website/register)，点击博客列表中右侧的 `使用` 链接，将窗口里的 YAML 配置内容复制到 Hexo 自身的 `_config.yml` 配置文件即可。
@@ -99,7 +99,7 @@ readmore:
 | expires          | Number          | 否   | `365`                                                 | -    |
 | interval         | Number          | 否   | `60`                                                  | -    |
 | allowMobile      | Boolean         | 否   | `false`                                               | -    |
-| random           | Number          | 否   | `1`                                                   | -    |
+| random           | Number          | 否   | `1.0`                                                 | -    |
 | excludes         | Array           | 否   |                                                       | -    |
 | tocSelector      | String          | 否   |                                                       | -    |
 | articleContentId | String          | 否   | `readmore-container`                                  | -    |
