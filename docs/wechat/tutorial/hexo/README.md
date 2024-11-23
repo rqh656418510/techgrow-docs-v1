@@ -15,7 +15,7 @@ Hexo 博客建议安装 [hexo-readmore](https://github.com/rqh656418510/hexo-rea
 - 支持查询用户解锁文章的历史记录
 - 支持自定义或者动态计算文章内容的预览高度
 - 支持自定义 CSS 样式，轻松适配不同风格的博客
-- 支持开放 API，灵活接入第三方私有化部署的应用服务
+- 支持开放 API，灵活接入第三方私有化部署的系统服务
 
 ## 注册博客
 
@@ -177,11 +177,12 @@ readmore:
 
 ## 主题兼容问题
 
-在 Hexo 博客安装引流插件之后，如果出现兼容问题，比如代码块显示不正常、无论怎样点击文章目录（Toc）的锚点链接都没有任何反应，那么这些情况一般是引流插件与 Hexo 主题存在兼容问题导致的，解决办法是新增以下两个插件配置参数。配置示例如下：
+在 Hexo 安装引流插件之后，如果出现兼容问题，比如引流插件不生效、代码块显示不正常、无论怎样点击文章目录（Toc）的锚点链接都没有任何反应，那么这些情况通常是引流插件与 Hexo 主题存在兼容问题导致的。解决方法是新增以下两个插件配置参数：
 
 ``` yml
 readmore:
-  # 获取文章目录（Toc）的 JS 选择器
+  ....
+  # 获取文章目录（Toc）的 JS 选择器，在存在兼容性问题时才需要根据不同的主题进行配置
   tocSelector: ''
   # 文章主体内容所在容器（DIV 标签）的 ID，在存在兼容性问题时才需要根据不同的主题进行配置
   articleContentId: ''
@@ -199,15 +200,16 @@ readmore:
 :::
 
 ::: warning 特别注意事项
-在正常情况下，不需要也不建议配置 `tocSelector` 和 `articleContentId` 这两个参数。另外，`tocSelector` 参数可以单独使用，而且 `articleContentId` 可以配合下面介绍的 `pjaxSelector` 与 `pjaxCssClass` 参数一起使用。
+在正常情况下，不建议也不需要配置 `tocSelector` 和 `articleContentId` 这两个参数。另外，`tocSelector` 参数可以单独使用，而 `articleContentId` 参数除了可以单独使用之外，还可以配合下面介绍的 `pjaxSelector` 与 `pjaxCssClass` 参数一起使用。
 :::
 
 ## Pjax 的支持
 
-如果博客启用了 Pjax，那么 Hexo 引流插件需要使用 `pjaxCssClass` 参数指定 Pjax 支持重载的 Css 类名（例如 `pjax`），同时还需要使用 `pjaxSelector` 参数指定获取文章主体内容的 JS 选择器。否则在站点内（如首页、标签页、分类页、归档页等）通过链接访问文章页面时，引流工具不会生效，除非是手动刷新一次页面。配置示例如下：
+如果博客启用了 Pjax，那么 Hexo 引流插件需要使用 `pjaxCssClass` 参数指定 Pjax 支持重载的 Css 类名（例如 `pjax`），同时还需要使用 `pjaxSelector` 参数指定获取文章主体内容的 JS 选择器。否则在站点内（如首页、标签页、分类页、归档页等）通过链接跳转访问文章页面时，引流工具不会生效，除非是手动刷新一次页面。配置示例如下：
 
 ``` yml
 readmore:
+  ....
   # 获取文章主体内容的 JS 选择器，在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
   pjaxSelector: ''
   # Pjax 支持重载的 Css 类名（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
@@ -240,7 +242,7 @@ readmore:
 
 ## 开放 API
 
-若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端应用服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
+若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端系统服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
 
 ## 已兼容的主题
 

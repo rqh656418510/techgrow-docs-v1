@@ -14,7 +14,7 @@ VuePress v1 博客建议安装 [vuepress-plugin-readmore-popular](https://github
 - 支持查询用户解锁文章的历史记录
 - 支持自定义或者动态计算文章内容的预览高度
 - 支持自定义 CSS 样式，轻松适配不同风格的博客
-- 支持开放 API，灵活接入第三方私有化部署的应用服务
+- 支持开放 API，灵活接入第三方私有化部署的系统服务
 
 ## 注册博客
 
@@ -210,7 +210,7 @@ module.exports = {
 
 ## 开放 API
 
-若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端应用服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
+若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端系统服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
 
 ## 常见问题
 
@@ -218,9 +218,7 @@ module.exports = {
 VuePress 安装插件后，所有页面的引流工具都无法生效。
 :::
 
-若所有页面的引流工具都无法生效，此时需要留意 VuePress 使用的是不是第三方主题。在使用第三方主题的情况下，一般需要根据第三方主题来配置插件的 `selector` 参数，该参数可以指定 JS 选择器来获取文章的主体内容，详细说明请看<a :href="$withBase('/wechat/tutorial/vuepress2/#插件参数说明')">这里</a>。
-
-> 值得一提的是，若由于 `selector` 参数配置不正确导致引流工具无效，那么在浏览器的控制台会输出类似下面的警告信息：
+若所有页面的引流工具都无法生效，此时需要留意 VuePress 使用的是不是第三方主题。在使用第三方主题的情况下，一般需要根据第三方主题来配置插件的 `selector` 参数，该参数可以指定 JS 选择器来获取文章的主体内容，详细说明请看<a :href="$withBase('/wechat/tutorial/vuepress2/#插件参数说明')">这里</a>。值得一提的是，如果 `selector` 参数配置不正确导致引流工具无效，那么在浏览器的控制台会输出类似下面的警告信息：
 
 <img :src="$withBase('/images/guide/8i4J9HpUUelLo43KLdHphgMHIFQwleNg.png')">
 
