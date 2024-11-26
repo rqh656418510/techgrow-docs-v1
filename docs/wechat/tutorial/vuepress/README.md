@@ -169,7 +169,6 @@ module.exports = {
 
 - 根据 URL 正则表达式，关闭符合规则的所有文章的引流功能
 
-
 ``` js
 module.exports = {
   plugins: [
@@ -216,7 +215,7 @@ module.exports = {
 
 | 主题                  | GitHub 仓库                                                                                                                                              |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 官方默认主题          | [https://github.com/vuejs/vuepress/tree/master/packages/@vuepress/theme-vue](https://github.com/vuejs/vuepress/tree/master/packages/@vuepress/theme-vue) |
+| @vuepress/theme-vue   | [https://github.com/vuejs/vuepress/tree/master/packages/@vuepress/theme-vue](https://github.com/vuejs/vuepress/tree/master/packages/@vuepress/theme-vue) |
 | vuepress-theme-reco   | [https://github.com/vuepress-reco/vuepress-theme-reco-1.x](https://github.com/vuepress-reco/vuepress-theme-reco-1.x)                                     |
 | vuepress-theme-hope   | [https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1)                           |
 | vuepress-theme-vdoing | [https://github.com/xugaoyi/vuepress-theme-vdoing](https://github.com/xugaoyi/vuepress-theme-vdoing)                                                     |
