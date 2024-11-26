@@ -226,7 +226,7 @@ module.exports = {
 VuePress 安装插件后，所有页面的引流工具都无法生效。
 :::
 
-若所有页面的引流工具都无法生效，此时需要留意 VuePress 使用的是不是第三方主题。在使用第三方主题的情况下，通常需要根据第三方主题来配置插件的 `selector` 参数，该参数可以指定 JS 选择器来获取文章的主体内容，详细说明请看<a :href="$withBase('/wechat/tutorial/vuepress2/#插件参数说明')">这里</a>。值得一提的是，如果 `selector` 参数配置不正确导致引流工具无效，那么在浏览器的控制台会输出类似下面的警告信息：
+若所有页面的引流工具都无法生效，此时需要留意 VuePress 使用的是不是第三方主题。在使用第三方主题的情况下，通常需要根据第三方主题来配置插件的 `selector` 参数，该参数可以指定 JS 选择器来获取文章的主体内容，详细说明请看<a :href="$withBase('/wechat/tutorial/vuepress/#插件参数说明')">这里</a>。值得一提的是，如果 `selector` 参数配置不正确导致引流工具无效，那么在浏览器的控制台会输出类似下面的警告信息：
 
 <img :src="$withBase('/images/guide/8i4J9HpUUelLo43KLdHphgMHIFQwleNg.png')">
 
