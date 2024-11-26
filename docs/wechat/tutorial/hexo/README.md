@@ -218,10 +218,11 @@ readmore:
 
 值得一提的是，上述两个插件配置参数都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下（特别注意，随着主题的迭代开发，以下配置可能会过时失效，请根据最新的主题代码来配置）：
 
-| 主题                                                    | pjaxCssClass 配置      | pjaxSelector 配置                     |
-| ------------------------------------------------------- | ---------------------- | ------------------------------------- |
-| [NexT](https://github.com/next-theme/hexo-theme-next)   | `pjaxCssClass: 'pjax'` | `pjaxSelector: 'div.main-inner'`      |
-| [Tree](https://github.com/rqh656418510/hexo-theme-tree) | `pjaxCssClass: 'pjax'` | `pjaxSelector: 'div.article-content'` |
+| 主题                                                           | pjaxCssClass 配置      | pjaxSelector 配置                     | 特别说明                                                              |
+| -------------------------------------------------------------- | ---------------------- | ------------------------------------- | --------------------------------------------------------------------- |
+| [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'` | `pjaxSelector: 'div.main-inner'`      |                                                                       |
+| [Tree](https://github.com/rqh656418510/hexo-theme-tree)        | `pjaxCssClass: 'pjax'` | `pjaxSelector: 'div.article-content'` |                                                                       |
+| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |                        |                                       | [解决 Pjax 不生效的问题](https://www.techgrow.cn/posts/8e3e42f0.html) |
 
 ::: tip 配置参数说明
 上述 `pjaxCssClass` 参数的作用是让 Pjax 重载引流工具的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `Page` 和 `Post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `Post` 页面添加引流代码段。
