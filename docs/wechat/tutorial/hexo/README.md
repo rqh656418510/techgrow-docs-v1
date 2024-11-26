@@ -192,8 +192,8 @@ readmore:
 
 | 主题                                                           | tocSelector 配置              | articleContentId 配置                   |
 | -------------------------------------------------------------- | ----------------------------- | --------------------------------------- |
-| [Matery](https://github.com/blinkfox/hexo-theme-matery)        | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'`    |
 | [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `tocSelector: '#card-toc'`    | `articleContentId: 'article-container'` |
+| [Matery](https://github.com/blinkfox/hexo-theme-matery)        | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'`    |
 | [Tree](https://github.com/wujun234/hexo-theme-tree)            | `tocSelector: '#site-toc'`    | `articleContentId: 'article-content'`   |
 
 ::: tip 配置参数说明
@@ -257,6 +257,7 @@ readmore:
 | Fluid     | [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)         |
 | Stun      | [https://github.com/liuyib/hexo-theme-stun](https://github.com/liuyib/hexo-theme-stun)                 |
 | Butterfly | [https://github.com/jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |
+| Stellar   | [https://github.com/xaoxuu/hexo-theme-stellar](https://github.com/xaoxuu/hexo-theme-stellar)           |
 | Tree      | [https://github.com/wujun234/hexo-theme-tree](https://github.com/wujun234/hexo-theme-tree)             |
 
 ## 常见问题
