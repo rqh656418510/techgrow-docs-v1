@@ -233,6 +233,10 @@ readmore:
 由于 Pjax 非常依赖页面布局的一致性，因此请确保通过 `pjaxSelector` 参数指定的 JS 选择器在所有页面（包括 `Page` 和 `Post`）都能够获取到唯一的 HTML 标签元素，否则会导致部分页面的 Pjax 或者引流功能不会生效。如果无法满足这一点，则需要手动更改 Hexo 主题的模板代码，使 JS 选择器在所有页面都能够获取到唯一的 HTML 标签元素。Hexo 主题模板代码的修改可以参考 [NexT](https://github.com/rqh656418510/hexo-theme-next-8.x/commit/6e259889fdc867ccd8eb1163e9b1f0629493387a)，然后设置 `pjaxSelector` 的参数值为 `div.post-container`，并设置 `pjaxCssClass` 的参数值为 `pjax`。
 :::
 
+## 开放 API 支持
+
+若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端系统服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
+
 ## 自定义样式
 
 插件默认使用了定义在 [hexo.css](https://qiniu.techgrow.cn/readmore/dist/hexo.css) 的 CSS 样式，你可以使用以下两种方式自定义自己的样式：
@@ -241,10 +245,6 @@ readmore:
 - 第二种方式：根据 [hexo.css](https://qiniu.techgrow.cn/readmore/dist/hexo.css) 创建自己的 CSS 文件（完整的），并将其存放在自己的博客里，同时通过插件的 `cssUrl` 配置参数来指定其访问的 URL 路径
 
 > 提示：为了方便日后维护，强烈建议使用第二种方式来添加自定义样式
-
-## 开放 API
-
-若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端系统服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
 
 ## 已兼容的主题
 

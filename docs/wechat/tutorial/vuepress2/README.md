@@ -131,12 +131,12 @@ module.exports = {
 | waitDomMills | Number          | 否   | `1000`                                               | -    |
 | random       | Number          | 否   | `1.0`                                                | -    |
 
-`selector` 参数的作用是指定 JS 选择器来获取文章的主体内容，若 VuePress 使用了第三方主题，则一般需要根据第三方主题来配置该参数，否则可能会导致引流工具无法生效。其中 VuePress 不同主题的配置示例如下：
+`selector` 参数的作用是指定 JS 选择器来获取文章的主体内容，若 VuePress 使用了第三方主题，则通常需要根据第三方主题来配置该参数，否则可能会导致引流工具无法生效。其中 VuePress 不同主题的配置示例如下（特别注意，随着主题的迭代开发，以下配置可能会过时失效，请根据最新的主题代码来配置）：
 
-| 主题                                                                                              | 插件配置                                | 备注         |
-| ------------------------------------------------------------------------------------------------- | --------------------------------------- | ------------ |
-| [@vuepress/theme-vue](https://github.com/vuejs/vuepress/tree/master/packages/@vuepress/theme-vue) | `selector: 'div.theme-default-content'` | 官方默认主题 |
-| [vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope)                 | `selector: 'div.theme-hope-content'`    | 第三方主题   |
+| 主题                                                                                            | 插件配置                                | 备注         |
+| ----------------------------------------------------------------------------------------------- | --------------------------------------- | ------------ |
+| [@vuepress/theme-default](https://github.com/vuepress/ecosystem/tree/main/themes/theme-default) | `selector: 'div.theme-default-content'` | 官方默认主题 |
+| [vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope)               | `selector: 'div.theme-hope-content'`    | 第三方主题   |
 
 ::: tip 提示
 若不清楚如何指定 JS 选择器，则可以打开博客的任意一篇文章，利用 Chrome 等浏览器的元素审查功能，找到文章页面中文章主体的 `div` 标签，最后定位得到 `div` 标签的 CSS 类即可（例如 `theme-default-content`），<a :href="$withBase('/images/guide/ggmr7dg23fjj3mqndyays04ok93adj3n.png')" target="_blank">点击查看</a>详细的操作图解。
@@ -189,10 +189,10 @@ module.exports = {
 ``` js
 module.exports = {
   plugins: [
-    readmorePlugin({
-      // 排除 URL 不以 `/fontend` 开头的文章
-      excludes: { regExp: ['^(?!\/fontend).*'] },
-    })
+    ['vuepress-plugin-readmore-popular', {
+      // 排除 URL 不以 `/php` 开头的文章
+      excludes: { regExp: ['^(?!\/php).*'] },
+    }]
   ]
 }
 ```
@@ -215,6 +215,10 @@ module.exports = {
 - 如果希望符合 URL 排除规则的文章才添加引流工具，则可以使用 `reverse : true` 配置参数实现
 :::
 
+## 开放 API 支持
+
+若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端系统服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
+
 ## 自定义样式
 
 插件默认使用了定义在 [vuepress2.css](https://qiniu.techgrow.cn/readmore/dist/vuepress2.css) 的 CSS 样式，你可以使用以下两种方式自定义自己的样式：
@@ -224,9 +228,12 @@ module.exports = {
 
 > 提示：为了方便日后维护，强烈建议使用第二种方式来添加自定义样式
 
-## 开放 API
+## 已兼容主题
 
-若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的后端系统服务，详细介绍请看<a :href="$withBase('/wechat/openapi/api/')">这里</a>。
+| 主题                | GitHub 仓库                                                                                                                                  |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 官方默认主题        | [https://github.com/vuepress/ecosystem/tree/main/themes/theme-default](https://github.com/vuepress/ecosystem/tree/main/themes/theme-default) |
+| vuepress-theme-hope | [https://github.com/vuepress-theme-hope/vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope)                     |
 
 ## 常见问题
 
@@ -234,7 +241,7 @@ module.exports = {
 VuePress 安装插件后，所有页面的引流工具都无法生效。
 :::
 
-若所有页面的引流工具都无法生效，此时需要留意 VuePress 使用的是不是第三方主题。在使用第三方主题的情况下，一般需要根据第三方主题来配置插件的 `selector` 参数，该参数可以指定 JS 选择器来获取文章的主体内容，详细说明请看<a :href="$withBase('/wechat/tutorial/vuepress2/#插件参数说明')">这里</a>。值得一提的是，如果 `selector` 参数配置不正确导致引流工具无效，那么在浏览器的控制台会输出类似下面的警告信息：
+若所有页面的引流工具都无法生效，此时需要留意 VuePress 使用的是不是第三方主题。在使用第三方主题的情况下，通常需要根据第三方主题来配置插件的 `selector` 参数，该参数可以指定 JS 选择器来获取文章的主体内容，详细说明请看<a :href="$withBase('/wechat/tutorial/vuepress2/#插件参数说明')">这里</a>。值得一提的是，如果 `selector` 参数配置不正确导致引流工具无效，那么在浏览器的控制台会输出类似下面的警告信息：
 
 <img :src="$withBase('/images/guide/8i4J9HpUUelLo43KLdHphgMHIFQwleNg.png')">
 
