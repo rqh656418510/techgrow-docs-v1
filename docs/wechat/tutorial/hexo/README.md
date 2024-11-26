@@ -194,6 +194,7 @@ readmore:
 | -------------------------------------------------------------- | ----------------------------- | --------------------------------------- |
 | [Matery](https://github.com/blinkfox/hexo-theme-matery)        | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'`    |
 | [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `tocSelector: '#card-toc'`    | `articleContentId: 'article-container'` |
+| [Tree](https://github.com/wujun234/hexo-theme-tree)            | `tocSelector: '#site-toc'`    | `articleContentId: 'article-content'`   |
 
 ::: tip 配置参数说明
 上述 `tocSelector` 参数的作用是通过 JS 选择器获取文章目录（Toc）的内容，而 `articleContentId` 参数是用于指定文章主体内容所在容器（DIV 标签）的 ID。
@@ -221,7 +222,7 @@ readmore:
 | 主题                                                           | pjaxCssClass 配置      | pjaxSelector 配置                     | 特别说明                                                              |
 | -------------------------------------------------------------- | ---------------------- | ------------------------------------- | --------------------------------------------------------------------- |
 | [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'` | `pjaxSelector: 'div.main-inner'`      |                                                                       |
-| [Tree](https://github.com/rqh656418510/hexo-theme-tree)        | `pjaxCssClass: 'pjax'` | `pjaxSelector: 'div.article-content'` |                                                                       |
+| [Tree](https://github.com/wujun234/hexo-theme-tree)            | `pjaxCssClass: 'pjax'` | `pjaxSelector: 'div#article-content'` |                                                                       |
 | [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |                        |                                       | [解决 Pjax 不生效的问题](https://www.techgrow.cn/posts/8e3e42f0.html) |
 
 ::: tip 配置参数说明
@@ -256,7 +257,7 @@ readmore:
 | Fluid     | [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)         |
 | Stun      | [https://github.com/liuyib/hexo-theme-stun](https://github.com/liuyib/hexo-theme-stun)                 |
 | Butterfly | [https://github.com/jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |
-| Tree      | [https://github.com/rqh656418510/hexo-theme-tree](https://github.com/rqh656418510/hexo-theme-tree)     |
+| Tree      | [https://github.com/wujun234/hexo-theme-tree](https://github.com/wujun234/hexo-theme-tree)             |
 
 ## 常见问题
 
