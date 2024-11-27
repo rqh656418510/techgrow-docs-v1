@@ -5,7 +5,7 @@ description: 博客引流微信公众号
 
 ## 前言
 
-博客将流量导向微信公众号很简单，可以使用 [TechGrow](https://open.techgrow.cn) 的免费引流工具实现，用户扫码关注微信公众号后可以解锁全站文章，让微信公众号的粉丝数躺着增长。博客手动整合引流工具，只需六步就可以搞定，适用于各类主流博客或者个人网站。
+博客将流量导向微信公众号很简单，可以使用 [TechGrow](https://open.techgrow.cn) 的免费引流工具实现，用户扫码关注微信公众号后可以解锁全站文章，让微信公众号的粉丝数躺着增长。博客手动整合引流工具，只需六步就可以搞定，适用于各类主流博客或者个人网站（比如 [Halo](https://github.com/halo-dev/halo)）。
 
 ::: tip 提示
 本文将以 Hexo 的 NexT 主题博客举例，重点介绍博客如何手动整合 [TechGrow](https://open.techgrow.cn) 的免费引流工具。
@@ -15,6 +15,7 @@ description: 博客引流微信公众号
 
 - 兼容主流的博客框架
 - 支持随机为博客添加引流功能
+- 支持微信公众号验证码解锁文章
 - 支持查询用户解锁文章的历史记录
 - 支持自定义或者动态计算文章内容的预览高度
 - 支持自定义 CSS 样式，轻松适配不同风格的博客
@@ -111,23 +112,23 @@ description: 博客引流微信公众号
     var regex = /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
     var isMobile = navigator.userAgent.match(regex);
     if (!isMobile) {
-        try {
-            var plugin = new ReadmorePlugin();
-            plugin.init({
-                id: "readmore-container",
-                blogId: "18762-1609305354821-257",
-                name: "全栈技术驿站",
-                keyword: "Tech",
-                qrcode: "https://www.techgrow.cn/img/wx_mp_qr.png",
-                type: "hexo",
-                height: "auto",
-                expires: "365",
-                interval: "60",
-                random: "1.0"
-            })
-        } catch (e) {
-            console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
-        }
+      try {
+          var plugin = new ReadmorePlugin();
+          plugin.init({
+              id: "readmore-container",
+              blogId: "18762-1609305354821-257",
+              name: "全栈技术驿站",
+              keyword: "Tech",
+              qrcode: "https://www.techgrow.cn/img/wx_mp_qr.png",
+              type: "hexo",
+              height: "auto",
+              expires: "365",
+              interval: "60",
+              random: "1.0"
+          })
+      } catch (e) {
+          console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
+      }
     }
 </script>
 ```
@@ -145,7 +146,7 @@ description: 博客引流微信公众号
 | expires  | Number          | 否   | `365`     | 文章解锁后凭证的有效天数                                                                                                  |
 | interval | Number          | 否   | `60`      | 定时校验凭证有效性的时间间隔（秒）                                                                                        |
 | random   | Number          | 否   | `1.0`     | 每篇文章随机添加引流工具的概率，范围在 0.1 ~ 1.0 之间，代表 10% ~ 100%，其中 1.0 表示所有文章默认都添加引流工具           |
-| type     | String          | 否   | `website` | 博客类型，包括：`hexo`、`vuepress`、`vuepress2`、`hugo`、`gatsby`、`jekyll`、`docsify`、`typecho`、`wordpress`、`website` |
+| type     | String          | 否   | `website` | 博客类型，包括：`website`、`hexo`、`vuepress`、`vuepress2`、`hugo`、`gatsby`、`jekyll`、`docsify`、`typecho`、`wordpress` |
 
 ### 第六步：验证引流工具是否整合成功
 
@@ -159,6 +160,53 @@ description: 博客引流微信公众号
 
 ::: tip 使用总结
 博客整合引流工具，其本质原理就是先在博客的主题源码里，找到文章的主体内容，然后在其外面包裹一层 DIV 标签（`<div id="readmore-container"></div>`），最后再将引流工具的 HTML 代码添加到博客文章的末尾即可。
+:::
+
+## 取消阅读限制
+
+若希望关闭部分文章的微信公众号引流功能，可以参考以下 HTML 代码，其中 `excludePages` 变量定义的就是需要关闭引流功能的文章的 URL。
+
+``` html
+<link href="https://qiniu.techgrow.cn/readmore/dist/readmore.css" type="text/css" rel="stylesheet">
+<script src="https://qiniu.techgrow.cn/readmore/dist/readmore.js" type="text/javascript"></script>
+<script>
+	// 标记是否排除当前文章
+	var isExclude = false;
+	// 需要关闭引流功能的文章的 URL
+	var excludePages = ['/python', '/golang', '/java'];
+	// 当前文章的 URL（去掉尾部的斜杠，并且统一小写）
+	var currentPath = window.location.pathname.replace(/\/$/, '').toLowerCase();
+	// 判断是否排除当前文章
+	if (excludePages.includes(currentPath)) {
+	    isExclude = true;
+	}
+
+	var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+	var allowMobile = false;
+	if (!isExclude && (!isMobile || (isMobile && allowMobile))) {
+      try {
+          var plugin = new ReadmorePlugin();
+          plugin.init({
+              id: "readmore-container",
+              blogId: "18762-1609305354821-257",
+              name: "全栈技术驿站",
+              keyword: "Tech",
+              qrcode: "https://www.techgrow.cn/img/wx_mp_qr.png",
+              type: "hexo",
+              height: "auto",
+              expires: "365",
+              interval: "60",
+              random: "1.0"
+          })
+      } catch (e) {
+          console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
+      }
+	}
+</script>
+```
+
+::: tip 提示
+在上述 HTML 代码中，当 `type` 属性为 `website` 或者 `hexo` 的时候，默认不会给右边这几个页面添加引流功能，包括：`/tags`、`/categories`、`/archives`、`/comments`、`/about`、`/links`。
 :::
 
 ## 开放 API 支持
@@ -186,4 +234,4 @@ description: 博客引流微信公众号
 博客整合引流工具后，移动端的引流工具无法生效，而 PC 端却生效
 :::
 
-考虑到用户体验的问题，在移动端默认是关闭引流功能的，请知悉。
+考虑到用户体验的问题，在移动端默认是关闭引流功能的。若希望在移动端启用引流功能，可以将上述 HTML 代码改为 `var allowMobile = true;`。
