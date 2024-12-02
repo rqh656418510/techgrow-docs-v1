@@ -146,7 +146,7 @@ description: 博客引流微信公众号
 | expires  | Number          | 否   | `365`  | 文章解锁后凭证的有效天数                                                                                                  |
 | interval | Number          | 否   | `60`   | 定时校验凭证有效性的时间间隔（秒）                                                                                        |
 | random   | Number          | 否   | `1.0`  | 每篇文章随机添加引流工具的概率，范围在 0.1 ~ 1.0 之间，代表 10% ~ 100%，其中 1.0 表示所有文章默认都添加引流工具           |
-| type     | String          | 否   |        | 博客类型，包括：`website`、`hexo`、`vuepress`、`vuepress2`、`hugo`、`gatsby`、`jekyll`、`docsify`、`typecho`、`wordpress` |
+| type     | String          | 是   |        | 博客类型，包括：`website`、`hexo`、`vuepress`、`vuepress2`、`hugo`、`gatsby`、`jekyll`、`docsify`、`typecho`、`wordpress` |
 
 ### 第六步：验证引流工具是否整合成功
 
