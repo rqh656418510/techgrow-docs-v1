@@ -7,7 +7,7 @@ description: Java 开源项目
 
 TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github.com/rqh656418510/techgrow-openapi-java)。简单私有化部署 Java 后端服务后，就可以无缝接入已开源的引流插件，不限于 Hexo、VuePress 等引流插件。值得一提的是，您也可以在开源后端项目的基础上，二次开发自己所需要的功能。
 
-## 接口实现说明
+## 接口实现
 
 目前已完整实现 TechGrow 官方的 OpenAPI 接口，并做了一定的扩展，接口列表如下表所示。
 
@@ -18,7 +18,7 @@ TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github
 | 校验凭证     | `/api/readmore/token/validate`   | POST       |                                                 |
 | 新增浏览记录 | `/api/readmore/browse/add`       | POST       |                                                 |
 
-## 配置参数说明
+## 配置参数
 
 在默认情况下，所有配置参数都可以通过操作系统的环境变量统一指定，除特别说明除外。
 
@@ -64,7 +64,7 @@ TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github
 | DB_CONSOLE_PATH         | 否       | string  | `/h2-console`                                                                                                   | H2 数据库的 Web 控制台访问地址      |
 | DB_CONSOLE_ALLOW_OTHERS | 否       | boolean | `false`                                                                                                         | 允许远程访问 H2 数据库的 Web 控制台 |
 
-## 数据库使用说明
+## 数据库使用
 
 ::: tip 阅读提示
 在默认情况下，您无需指定 Java 后端服务的数据库配置参数，即可跳过阅读数据库使用这一章节。
@@ -74,7 +74,7 @@ TechGrow 官方已开源基于 OpenAPI 的 [Java 版后端项目](https://github
 
 ### H2 数据库
 
-Java 后端服务默认使用 [H2](https://h2database.com) 作为数据库（内嵌式数据库），且在默认的配置下会持久化数据库的数据，并将数据保存到 Java 应用（即 Jar 包）所在目录下的 `db` 目录里的 `readmore.mv.db` 文件中。如果不需要持久化数据库的数据，则可以使用 H2 数据库的内存模式，这样可以得到极致的数据库性能，但应用重启后会丢失所有数据库数据。
+Java 后端服务默认使用 [H2](https://h2database.com) 作为数据库（内嵌式数据库），且在默认的配置下会持久化数据库的数据，并将数据保存到 Java后端服务（即 Jar 包）所在目录下的 `db` 目录里的 `readmore.mv.db` 文件中。如果不需要持久化数据库的数据，则可以使用 H2 数据库的内存模式，这样可以得到极致的数据库性能，但应用重启后会丢失所有数据库数据。
 
 ::: tip H2 数据库的连接
 
@@ -91,13 +91,13 @@ H2 数据库的连接，可以使用 `DB_TYPE`、`DB_URL` 配置参数来实现�
 DB_TYPE=h2
 DB_URL=jdbc:h2:mem:readmore;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE
 
-# 持久化模式，连接位于 Java 应用（即 Jar 包）所在目录下的 db 目录里的 readmore 数据库，MODE 表示兼容哪种数据库
+# 持久化模式，连接位于 Java 后端服务（即 Jar 包）所在目录下的 db 目录里的 readmore 数据库，MODE 表示兼容哪种数据库
 DB_TYPE=h2
 DB_URL=jdbc:h2:file:./db/readmore;MODE=MySQL;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE
 ```
 
 ::: tip H2 数据库的初始化
-Java 应用正常启动后，默认会自动执行 H2 数据库的初始化操作（创建表），无需人工干预。
+Java 后端服务正常启动后，默认会自动执行 H2 数据库的初始化操作（创建表），无需人工干预。
 :::
 
 ::: tip H2 的 Web 控制台
@@ -111,7 +111,7 @@ H2 数据库自带 Web 控制台，它的作用就相当于 PhpMyAdmin，可以�
 若希望连接 MySQL 数据库，可以使用 `DB_TYPE`、`DB_URL` 配置参数来实现。
 
 ::: tip MySQL 数据库的创建
-在启动 Java 应用前，必须先在 MySQL 里创建数据库 `readmore`，否则应用将无法正常启动。
+在启动 Java 后端服务前，必须先在 MySQL 里创建数据库 `readmore`，否则应用将无法正常启动。
 :::
 
 ``` sql
@@ -130,14 +130,14 @@ DB_URL=jdbc:mysql://127.0.0.1:3306/readmore?useUnicode=true&characterEncoding=UT
 ```
 
 ::: tip MySQL 数据库的初始化
-Java 应用正常启动后，默认会自动执行 MySQL 数据库的初始化操作（创建表），无需人工干预。
+Java 后端服务正常启动后，默认会自动执行 MySQL 数据库的初始化操作（创建表），无需人工干预。
 :::
 
-## 数据库备份说明
+## 数据库备份
 
 ### H2 数据库
 
-Java 后端服务在默认的配置下会持久化 H2 数据库的数据，并将数据保存到 Java 应用（即 Jar 包）所在目录下的 `db` 目录里的 `readmore.mv.db` 文件中。因此，您可以先关闭 Java 后端服务，然后拷贝一份 `readmore.mv.db` 文件，即可实现 H2 数据库的全量备份。另外，您也可以通过 H2 的 Web 控制台工具进行备份，支持在不关闭 Java 后端服务的基础上，实时备份或者恢复 H2 的数据库数据。
+Java 后端服务在默认的配置下会持久化 H2 数据库的数据，并将数据保存到 Java 后端服务（即 Jar 包）所在目录下的 `db` 目录里的 `readmore.mv.db` 文件中。因此，您可以先关闭 Java 后端服务，然后拷贝一份 `readmore.mv.db` 文件，即可实现 H2 数据库的全量备份。另外，您也可以通过 H2 的 Web 控制台工具进行备份，支持在不关闭 Java 后端服务的基础上，实时备份或者恢复 H2 的数据库数据。
 
 ### MySQL 数据库
 
@@ -148,17 +148,56 @@ MySQL 数据库的备份，建议使用命令行进行全量备份，使用示�
 mysqldump -h 127.0.0.1 -u root -p readmore > readmore.sql
 ```
 
-## 命令行部署说明
+## 命令行部署
 
-Java 后端服务支持使用命令行的方式部署，但不推荐使用。第一个原因是对操作系统的软件环境有依赖；第二个原因是操作系统重启后，需要手动启动 Java 后端服务，除非是使用第三方工具（如 Supervisor）管理服务。推荐使用 Docker 或者 Docker-Compose 进行部署。
+Java 后端服务支持使用命令行的方式部署，但不推荐使用。第一个原因是对操作系统的软件环境有依赖；第二个原因是操作系统重启后，需要手动启动 Java 后端服务，除非是注册成系统服务或者使用第三方工具（如 Supervisor）来管理服务。推荐使用 Docker 或者 Docker-Compose 进行部署。
 
 ### 安装 JDK
 
-使用命令行的部署方式，必须在操作系统上先安装并配置好 JDK 1.8+，然后才能部署 Java 后端服务。
+使用命令行部署方式，必须在 Linux 操作系统上先安装并配置好 JDK 1.8+，然后才能部署 Java 后端服务。
+
+- 下载安装 OpenJDK
+
+``` sh
+# 下载文件
+$ wget https://download.java.net/openjdk/jdk11.0.0.2/ri/openjdk-11.0.0.2_linux-x64.tar.gz
+
+# 创建解压目录
+$ sudo mkdir -p /usr/lib/jvm
+
+# 解压文件
+$ sudo tar -xvf openjdk-11.0.0.2_linux-x64.tar.gz -C /usr/lib/jvm
+
+# 重命名文件
+$ sudo mv /usr/lib/jvm/jdk-11.0.0.2 /usr/lib/jvm/openjdk-11.0.0.2
+```
+
+- 添加系统环境变量
+
+``` sh
+# 编辑配置文件，添加环境变量
+$ vi ~/.bashrc
+export JAVA_HOME=/usr/lib/jvm/openjdk-11.0.0.2
+export PATH=$PATH:$JAVA_HOME/bin
+
+# 使环境变量生效
+$ source ~/.bashrc
+```
+
+- 验证 OpenJDK 安装
+
+``` sh
+# 查看 OpenJDK 的版本号
+$ java -version
+```
+
+::: tip 提示
+不同版本的 OpenJDK 可以在 [OpenJDK 官网](https://jdk.java.net/archive/) 下载得到。
+:::
 
 ### 命令行部署
 
-首先从 [GitHub](https://github.com/rqh656418510/techgrow-openapi-java/releases) 下载最新版本的软件包，文件名称为 `techgrow-openapi-java.jar`。使用命令行部署 Java 后端服务时，需要使用 `-D` 指定服务运行所需的配置参数（目的是指定环境变量）。Linux 系统的部署步骤如下，适用于 CentOS/Ubuntu/Debian 等发行版。
+首先从 [GitHub](https://github.com/rqh656418510/techgrow-openapi-java/releases) 下载最新版本的软件包，文件名称为 `techgrow-openapi-java.jar`。使用命令行部署 Java 后端服务时，需要使用 `-D` 指定服务运行所需的配置参数（目的是指定系统属性）。Linux 系统的部署步骤如下，适用于 CentOS/Ubuntu/Debian 等发行版。
 
 ``` sh
 # 启动Java后端服务
@@ -199,9 +238,9 @@ app
 └── techgrow-openapi-java.jar
 ```
 
-## Docker 部署说明
+## Docker 部署
 
-当使用 H2 作为数据库，在 Docker 容器启动后，H2 的数据库文件和 Java 应用的日志文件默认都存放在容器内的 `/usr/local/techgrow-openapi-java` 目录下。为了防止 Docker 容器销毁后，导致 H2 数据库数据的丢失，则必须先在本地磁盘创建数据库目录，然后将它挂载到 Docker 容器中。
+当使用 H2 作为数据库，在 Docker 容器启动后，H2 的数据库文件和 Java 后端服务的日志文件默认都存放在容器内的 `/usr/local/techgrow-openapi-java` 目录下。为了防止 Docker 容器销毁后，导致 H2 数据库数据的丢失，则必须先在本地磁盘创建数据库目录，然后将它挂载到 Docker 容器中。
 
 ``` sh
 # 创建数据库目录
@@ -212,10 +251,10 @@ mkdir -p /usr/data/techgrow-openapi/logs
 ```
 
 ::: tip Docker 配置参数指定
-Docker 或者 Docker-Compose 部署应用时，都可以通过环境变量的方式指定 Java 应用的配置参数。
+Docker 或者 Docker-Compose 部署应用时，都可以通过环境变量的方式来指定 Java 后端服务的配置参数。
 :::
 
-### Docker 一键部署
+### Docker 快速部署
 
 ``` sh
 docker run -p 8080:8080 \
@@ -257,8 +296,13 @@ services:
       - '/usr/data/techgrow-openapi/logs:/usr/local/techgrow-openapi-java/logs'
 ```
 
+``` sh
+# 创建并启动容器
+docker-compose up -d
+```
+
 ::: tip 查看 Docker 容器的运行日志
-为了观察 Java 应用是否启动成功，可以查看 Java 应用的启动日志来判断。在 Docker 容器启动后，可以使用 `docker logs -f --tail 50 techgrow-openapi` 命令查看 Docker 容器的运行日志。另外，还可以直接使用 `vi` 编辑器，打开本地磁盘里的 Java 应用日志文件，所在的目录路径是 `/usr/data/techgrow-openapi/logs`。
+为了观察 Java 后端服务是否启动成功，可以查看 Java 后端服务的启动日志来判断。在 Docker 容器启动后，可以使用 `docker logs -f --tail 50 techgrow-openapi` 命令查看 Docker 容器的运行日志。另外，还可以直接使用 `vi` 编辑器，打开本地磁盘里的 Java 后端服务日志文件，所在的目录路径是 `/usr/data/techgrow-openapi/logs`。
 :::
 
 ## 公众号的服务器配置
