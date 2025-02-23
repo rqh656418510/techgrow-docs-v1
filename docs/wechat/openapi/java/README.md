@@ -97,21 +97,21 @@ DB_URL=jdbc:h2:file:./db/readmore;MODE=MySQL;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1;
 ```
 
 ::: tip H2 数据库的初始化
-Java 后端服务正常启动后，默认会自动执行 H2 数据库的初始化操作（创建表），无需人工干预。
+Java 后端服务正常启动后，默认会自动执行 H2 数据库的初始化操作（包括创建数据库和数据库表），无需人为干预。
 :::
 
 ::: tip H2 的 Web 控制台
-H2 数据库自带 Web 控制台，它的作用就相当于 PhpMyAdmin，可以很方便地管理数据库。
+H2 数据库自带 Web 控制台，它的作用就相当于 PhpMyAdmin，可以很方便地在线管理数据库。
 :::
 
 使用配置参数 `DB_CONSOLE_ENABLED=true`，就可以启用 H2 的 Web 控制台功能，浏览器默认的访问路径是 `http://ip:port/h2-console`，默认端口是 `8080`。考虑到数据库的安全性，H2 的 Web 控制台默认不允许远程访问，但可以使用`DB_CONSOLE_ALLOW_OTHERS=true` 配置参数来解除限制。
 
 ### MySQL 数据库
 
-若希望连接 MySQL 数据库，可以使用 `DB_TYPE`、`DB_URL` 配置参数来实现。
+若希望连接 MySQL 数据库，可以使用 `DB_TYPE`、`DB_URL` 配置参数来实现，建议使用 MySQL `5.7.x` 版本。
 
 ::: tip MySQL 数据库的创建
-在启动 Java 后端服务前，必须先在 MySQL 里创建数据库 `readmore`，否则应用将无法正常启动。
+在启动 Java 后端服务前，必须在 MySQL 里手动创建数据库 `readmore`，否则应用将无法正常启动。
 :::
 
 ``` sql
@@ -130,7 +130,7 @@ DB_URL=jdbc:mysql://127.0.0.1:3306/readmore?useUnicode=true&characterEncoding=UT
 ```
 
 ::: tip MySQL 数据库的初始化
-Java 后端服务正常启动后，默认会自动执行 MySQL 数据库的初始化操作（创建表），无需人工干预。
+Java 后端服务正常启动后，默认会自动执行 MySQL 数据库的初始化操作（创建数据库表），无需人为干预。
 :::
 
 ## 数据库备份
@@ -156,7 +156,7 @@ Java 后端服务支持使用命令行的方式部署，但不推荐使用。第
 
 使用命令行部署方式，必须在 Linux 操作系统上先安装并配置好 JDK 1.8+，然后才能部署 Java 后端服务。
 
-- 下载安装 OpenJDK
+- 安装 OpenJDK
 
 ``` sh
 # 下载文件
