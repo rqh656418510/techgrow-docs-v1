@@ -26,7 +26,7 @@ module.exports = {
 		author: 'TechGrow',
 		startYear: '2022',
 		logo: '/head.png',
-		record: '粤 ICP 备 19024664 号',
+		record: '粤ICP备 19024664号-1',
 		recordLink: 'https://beian.miit.gov.cn/',
 		subSidebar: 'auto',
 		displayAllHeaders: false,
