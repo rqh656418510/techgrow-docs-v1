@@ -87,6 +87,28 @@ module.exports = [
     link: '/donate/'
   },
   {
+    text: '法律',
+    icon: 'reco-document',
+    items: [
+      {
+        text: '用户协议',
+        link: '/terms/'
+      },
+      {
+        text: '免责声明',
+        link: '/declare/'
+      },
+      {
+        text: '隐私政策',
+        link: '/privacy/'
+      },
+      {
+        text: '侵权投诉',
+        link: '/complaint/'
+      },
+    ]
+  },
+  {
     text: '官方平台',
     icon: 'reco-tongzhi',
     link: 'https://open.techgrow.cn/'
