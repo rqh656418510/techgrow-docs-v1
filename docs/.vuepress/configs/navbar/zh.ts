@@ -87,7 +87,7 @@ module.exports = [
     link: '/donate/'
   },
   {
-    text: '法律',
+    text: '法律条款',
     icon: 'reco-document',
     items: [
       {
