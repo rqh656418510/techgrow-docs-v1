@@ -53,14 +53,14 @@ VuePress v2 博客建议安装 [vuepress-plugin-readmore-popular-next](https://g
 - 查看插件所有的版本信息
 
 ``` sh
-# 查看版本信息
+# 查看所有版本信息
 npm view vuepress-plugin-readmore-popular-next versions
 ```
 
 - 运行 `npm install` 命令安装插件到本地博客
 
 ``` sh
-# 安装最新版本
+# 安装最新版本（不推荐）
 npm install -D vuepress-plugin-readmore-popular-next
 
 # 安装指定版本（推荐），请自行更改对应的版本号

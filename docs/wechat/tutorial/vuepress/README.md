@@ -49,6 +49,7 @@ VuePress v1 博客建议安装 [vuepress-plugin-readmore-popular](https://github
 - 运行 `npm install` 命令安装插件到本地博客
 
 ``` sh
+# 安装最新版本
 npm install -D vuepress-plugin-readmore-popular
 ```
 
