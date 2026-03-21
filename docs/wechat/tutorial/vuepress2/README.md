@@ -134,7 +134,7 @@ module.exports = {
 
 `selector` 参数的作用是指定 JS 选择器来获取文章的主体内容，若 VuePress 使用了第三方主题，则通常需要根据第三方主题来配置该参数，否则可能会导致引流工具无法生效。其中 VuePress 不同主题的配置示例如下（**特别注意，随着主题的迭代开发，以下配置可能会过时失效，请根据最新的主题代码来配置**）：
 
-| 主题                                                                                              | 新版主题的插件配置            | 旧版主题的插件配置                      | 备注         |
+| 主题                                                                                              | 新版本主题的插件配置          | 旧版本主题的插件配置                    | 备注         |
 | ------------------------------------------------------------------------------------------------- | ----------------------------- | --------------------------------------- | ------------ |
 | [@vuepress/theme-vue](https://github.com/vuejs/vuepress/tree/master/packages/@vuepress/theme-vue) | `selector: 'div[vp-content]'` | `selector: 'div.theme-default-content'` | 官方默认主题 |
 | [vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope)                 | `selector: 'div[vp-content]'` | `selector: 'div.theme-hope-content'`    | 第三方主题   |
