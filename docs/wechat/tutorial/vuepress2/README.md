@@ -47,7 +47,7 @@ VuePress v2 博客建议安装 [vuepress-plugin-readmore-popular-next](https://g
 :::
 
 ::: warning 兼容性说明二
-以引流插件版本号 `2.0.0-rc.22.x` 举例，其中的 `2.0.0-rc.22` 代表该引流插件所兼容的 VuePress v2 版本，而 `x` 则代表引流插件自身的修订版本号。若 VuePress v2 与引流插件的版本不兼容，很可能会导致编译出错或者引流插件无法生效。
+以引流插件版本号 `2.0.0-rc.24.x` 举例，其中的 `2.0.0-rc.24` 代表该引流插件所兼容的 VuePress v2 版本，而 `x` 则代表引流插件自身的修订版本号。若 VuePress v2 与引流插件的版本不兼容，很可能会导致编译出错或者引流插件无法生效。
 :::
 
 - 查看插件所有的版本信息
@@ -64,7 +64,7 @@ npm view vuepress-plugin-readmore-popular-next versions
 npm install -D vuepress-plugin-readmore-popular-next
 
 # 安装指定版本（推荐），请自行更改对应的版本号
-npm install -D vuepress-plugin-readmore-popular-next@2.0.0-rc.22.1
+npm install -D vuepress-plugin-readmore-popular-next@2.0.0-rc.24.1
 ```
 
 ## 配置插件
