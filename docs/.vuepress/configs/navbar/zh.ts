@@ -72,6 +72,16 @@ module.exports = [
     ]
   },
   {
+    text: '辅助工具',
+    icon: 'reco-lock',
+    items: [
+      {
+        text: '公众号 MarkDown 编辑器',
+        link: 'https://www.techgrow.cn/md/'
+      }
+    ]
+  },
+  {
     text: '获取帮助',
     icon: 'reco-wechat',
     items: [
